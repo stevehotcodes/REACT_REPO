@@ -9,47 +9,17 @@ import { useEffect } from 'react'
 import { useReducer } from 'react'
 function App() {
 
-   
-
-
-  //   const DictionaryReducer=(state, action)=>{
-  //     switch(action.type){
-  //         case 'SET_WORD':
-  //             return{...state, word:action.payload, definition:null};
-  //         case 'SET_DEFINITION':
-  //             return {...state, definition:action.payload}
-  //         default:
-  //             return state
-  //     }
   
-        
-  // }
-  
-
   const [searchWord, setWord] = useState("");
   const [state, dispatch]=useReducer(DictionaryReducer,initialState)
 
 
-  // const style={
-  //   display: block;
-  //   margin: 0 auto;
-  //   borderColor: red;
-  
-  // } 
-
- 
- 
   const handleSubmit=(e)=>{
         e.preventDefault()
        let  word=e.target[0].value
        console.log(word)
        setWord(word)
-      // dispatch({type:'SET_WORD',payload:word})
   }
-
-
-
-
 
 
   const fetchDefinition= async ()=>{
@@ -70,9 +40,6 @@ function App() {
       dispatch({type:'SET_LOADING',payload:false})
     }
 
-
-    
-    //
   }
 
   useEffect(()=>{
@@ -84,15 +51,9 @@ function App() {
 
     }
   },[searchWord]  )
-//   console.log("this the current state",state);
-//   console.log('State:', state);
-//   const fetchedDefinition=state.definition || []
-// console.log('Definition:', fetchedDefinition);
+
 
 if(state.loading){
-  // <ClipLoader size={130} color="#fff"
-  // loading={state.loading} />
-  // return <p>{state.loading}</p>
   console.log("loading steate ",state.loading);
 }
 
@@ -145,13 +106,7 @@ if(state.error){
         {state.error??(
           <div> something went wrong.......kindly refresh the page and try again</div>
         )}
-      </div>
-
-   
-    
-       
-    
-      
+      </div>     
       
 
         

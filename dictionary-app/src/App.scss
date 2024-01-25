@@ -38,6 +38,7 @@
 }
 
 .container{
+  
   width:100%;
   min-width:320px;
   max-width:960px;
@@ -78,21 +79,32 @@ form{
 }
 
 .definitionRender{
+  margin-top:10px;
   width:100%;
   color:white;
   border: 2px solid white;
   box-shadow:2px 2px 2px   #555555;
 
+  .definition{
+    ul{
+      list-style: none;
+    }
+  }
 
 
-  
 }
 
 }
 
 
-@media  screen and (max-wdith:800px) {
+@media  screen and (max-wdith:800px) {  
+  #root{
+    max-width:800px;
+    flex-wrap:wrap;
+  }
+
      .container{
-       width:70%;
+       max-width:800px;
+       margin:0;
      }
 }
