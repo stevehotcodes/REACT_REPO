@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -18,20 +22,6 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;
@@ -43,11 +33,25 @@
 .heading{
   color:white
 }
+.error{
+  color:white;
+}
 
+.container{
+  width:100%;
+  min-width:320px;
+  max-width:960px;
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 form{
+  width:100%;
   // border: 2px solid red;
     .input-search-icon{
         // border:2px solid red;
+        width:100%;
         display: flex;
         background-color: #242424;
         align-items: center;
@@ -73,3 +77,22 @@ form{
     
 }
 
+.definitionRender{
+  width:100%;
+  color:white;
+  border: 2px solid white;
+  box-shadow:2px 2px 2px   #555555;
+
+
+
+  
+}
+
+}
+
+
+@media  screen and (max-wdith:800px) {
+     .container{
+       width:70%;
+     }
+}
