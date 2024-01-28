@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import ClipLoader from "react-spinners/ClipLoader";
 import Reducer, { intialState } from './reducer/Reducer'
+import CountryData from './components/countryData'
 
 
 
@@ -175,19 +176,10 @@ const [state, dispatch]=useReducer(Reducer,intialState )
             <div className='country'>
               
               
-              {state.country.map((countryData, index) => (
-                <div key={index} className='country-details'>
-                  <div>{countryData.name.common}</div>
-                  <img src={countryData.flags.png} alt="" style={{width:150,}} />
-                  {/* <p>{countryData.fifa}</p> */}
-                  
-                </div>
+              {state.country.map((countryData) => (<CountryData  key={countryData.fifa} country={countryData}/>
 
               ))}
-
-
-
-            </div>
+          </div>
               
 
            
