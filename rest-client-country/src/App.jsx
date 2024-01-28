@@ -10,6 +10,7 @@ import axios from 'axios'
 import ClipLoader from "react-spinners/ClipLoader";
 import Reducer, { intialState } from './reducer/Reducer'
 import CountryData from './components/countryData'
+import ErrorComponent from './components/ErrorComponent'
 
 
 
@@ -135,13 +136,9 @@ const [state, dispatch]=useReducer(Reducer,intialState )
 
 
   if(state.error){
-    return <div className='error'>something went wrong.......kindly refresh the page and try again</div>
-    console.log( "this is an error",state.error);
+    return <ErrorComponent/>
   }
   
-  console.log(state.regions)
-
-
 
  
 
@@ -155,14 +152,14 @@ const [state, dispatch]=useReducer(Reducer,intialState )
                     <option >Filter by country</option>
                     
                     {state.regions.map(region => (
-                      <option key={region} value={region}    onClick={fetchCountriesByRegion}>{region}</option>
+                      <option key={region} value={region}  onClick={fetchCountriesByRegion}>{region}</option>
                      ))}
                   </select>
                   <button onClick={fetchCountriesByRegion}>Fetch Countries</button>
               </form>
         </div>
        
-        {/* <FlagsDisplay/> */}
+    
         <h2>search by countryname:{state.searchCountry}</h2>
         <div className="renderingDiv">
         {state.loading&&(
@@ -172,10 +169,21 @@ const [state, dispatch]=useReducer(Reducer,intialState )
          
         
 
-           {state.searchCountry||state.country &&!state.loading &&(
+           {state.country &&!state.loading &&(
             <div className='country'>
+                          
+              {state.country.map((countryData) => (<CountryData  key={countryData.fifa} country={countryData}/>
+
+              ))}
+          </div>
               
-              
+
+           
+          )}
+
+            {state.searchCountry&&!state.country &&!state.loading &&(
+            <div className='country'>
+                          
               {state.country.map((countryData) => (<CountryData  key={countryData.fifa} country={countryData}/>
 
               ))}
