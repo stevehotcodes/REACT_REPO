@@ -1,0 +1,23 @@
+.intro-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin:2px;
+    width:100%;
+    background-color: white;
+    border-radius:0.5rem;
+
+    .intro-item{
+       display: flex;
+       align-items: center;
+       padding:10px;
+       gap:12px;
+
+       img{
+          width:20px;
+       }
+       span{
+         font-weight:bolder;
+       }
+    }
+}

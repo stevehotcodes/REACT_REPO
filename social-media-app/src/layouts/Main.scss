@@ -1,5 +1,7 @@
 .main-container{
     width:85vw;
     min-height: 100vh; 
-    background-color:red;
+    display: flex;
+    flex-direction: column;;
+    // background-color:red;
 }

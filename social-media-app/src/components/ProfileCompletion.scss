@@ -1,0 +1,12 @@
+.profile-completion-container{
+    display: flex;
+    flex-direction: column;
+    margin:2px;
+    width:100%;
+    background-color: white;
+    border-radius:0.5rem;
+
+    .progress-bar{
+        display: flex;
+    }
+}

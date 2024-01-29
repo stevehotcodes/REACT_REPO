@@ -10,8 +10,12 @@
 }
 .root{
     width:100vw;
+    // max-width:1440px;
+    min-width:320px;
     display: flex;
-    overflow-x:hidden
+    // overflow-x:hidden
+
+    // border:2px solid red;
 }
 
 .logo {
