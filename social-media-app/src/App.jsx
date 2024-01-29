@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
 import Header from './components/Header'
 import SideMenu from './layouts/SideMenu'
 import Main from './layouts/Main'

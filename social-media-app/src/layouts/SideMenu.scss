@@ -1,0 +1,36 @@
+.side-container{
+    width:15vw;
+    /* background-color: blue;   */
+    min-height: 100vh;
+    // border:2px solid black ;
+
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    display:block;
+    
+}
+
+.dp-username{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.user-name{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:-12px;
+
+    padding:0;
+    margin:0;
+    height:4em;
+
+    h5{
+        margin-bottom: -20px;
+    }
+}
+
