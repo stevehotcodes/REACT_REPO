@@ -1,0 +1,49 @@
+.post-content-container{
+    margin-top:10px;
+    padding:4px;
+    gap:10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+    .profile-name-wrapper{
+        display: flex;
+        align-items: center;
+       
+        img{
+            width:50px;
+            height:50px;
+       }
+        
+        .user-name-time{
+            display: flex;
+            flex-direction: column;
+            .username{
+                font-weight:bolder;
+                
+            }
+            .time{
+                color:gray;
+                font-size:12px;
+            }
+
+        }
+        
+
+    }
+
+    .photo-div{
+        display: flex;
+        gap:5px;
+
+        #photo-1{
+            border-radius:10px;
+        }
+
+        img{
+            width:250px;
+            height:150px;
+        }
+    }
+
+}

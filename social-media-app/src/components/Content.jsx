@@ -1,6 +1,7 @@
 import './Content.scss'
 import Intro from './Intro'
 import PhotoSideBar from './PhotoSideBar'
+import PostContent from './PostContent'
 import PostDiv from './PostDiv'
 import ProfileCompletion from './ProfileCompletion'
 
@@ -50,6 +51,7 @@ const Content=()=>{
 
                 <div className='right-post-wrapper'>
                     <PostDiv/>
+                    <PostContent/>
                 </div>
             </div>
 
