@@ -1,0 +1,53 @@
+.post-container{
+    width:100%;
+    background-color: white;
+    padding:4px;
+    border-radius:2px;
+
+
+    .profile-pic-input{
+        margin:2px;
+        width:80%;
+        display: flex;
+        align-items: center;
+        gap:2px;
+
+        img{
+             width:50px;
+             height:50px;
+        }
+
+        input{
+            width:70%;
+            height:20px;
+            padding:4px;
+            border:2px solid rgb(236, 234, 234);
+            border-radius:1rem;
+            
+        }
+    }
+    
+    .actions{
+         display: flex;
+        .live-video{
+            display: flex;
+            align-items: center;
+            padding:10px;
+            gap:12px;
+        }
+        img{
+            width:20px;
+         }
+         span{
+           font-weight:bolder;
+           color:gray;
+         }
+
+
+
+
+    }
+
+
+
+}

@@ -1,5 +1,7 @@
 import './Content.scss'
 import Intro from './Intro'
+import PhotoSideBar from './PhotoSideBar'
+import PostDiv from './PostDiv'
 import ProfileCompletion from './ProfileCompletion'
 
 const Content=()=>{
@@ -42,11 +44,12 @@ const Content=()=>{
                 <div className='left-post-wrapper'>
                         <ProfileCompletion/>
                         <Intro/>
+                        <PhotoSideBar/>
 
                 </div>
 
                 <div className='right-post-wrapper'>
-                    5
+                    <PostDiv/>
                 </div>
             </div>
 
