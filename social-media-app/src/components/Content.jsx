@@ -52,6 +52,7 @@ const Content=()=>{
                 <div className='right-post-wrapper'>
                     <PostDiv/>
                     <PostContent/>
+                    <PostContent/>
                 </div>
             </div>
 

@@ -19,19 +19,24 @@ const PostContent =()=>{
             </div>
 
             <div className="actions">
-                <div className='live-video'>
-                    <img src="src\assets\videocam-outline.svg" alt="" />
-                    <span>Live Video</span>
+                <div className='action'>
+                    <img src="src\assets\heart-outline.svg" alt="" />
+                    <span>Likes</span>
                 </div>
 
-                <div className='live-video'>
-                    <img src="src\assets\videocam-outline.svg" alt="" />
-                    <span>Image/Video</span>
+                <div className='action'>
+                    <img src="src\assets\chatbubble-ellipses-outline.svg" alt="" />
+                    <span>Comments</span>
                 </div>
-                <div className='live-video'>
+                <div className='action'>
                     <img src="src\assets\star-outline.svg" alt="" />
                     <span>Activity</span>
                 </div>
+            </div>
+
+            <div className='comment-input'>
+                <input type="text" placeholder='write a comment' />
+                <img src="src\assets\happy-outline.svg" alt="" />
             </div>
 
         </div>

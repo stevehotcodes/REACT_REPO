@@ -9,9 +9,9 @@
   
 }
 .root{
-    width:100vw;
+    // width:100%;
     // max-width:1440px;
-    min-width:320px;
+    // min-width:320px;
     display: flex;
     // overflow-x:hidden
 
@@ -52,4 +52,8 @@
 
 .read-the-docs {
   color: #888;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

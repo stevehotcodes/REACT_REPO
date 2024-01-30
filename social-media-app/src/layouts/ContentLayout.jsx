@@ -5,7 +5,7 @@ import RightSidebar from "../components/RightSidebar"
 const ContentLayout=()=>{
     return (
         <div className="content-wrapper">
-                <Content/>
+            <Content/>
             <RightSidebar/>
         </div>
     )
