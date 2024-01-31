@@ -1,42 +1,89 @@
 import './PostContent.scss'
+import heart from "../assets/heart-outline.svg"
+import comments_icon from '../assets/chatbubble-ellipses-outline.svg'
+import star_icon from '../assets/star-outline.svg'
+import happy_icon from '../assets/happy-outline.svg'
+import content from '../assets/content-photo-1.png'
+import dp from "../assets/images.jpeg"
+import profilePhoto from "../assets/Avatar.png"
+
+
 
 const PostContent =()=>{
+
+
+const userDetails=[
+    {
+        profilePhoto:profilePhoto,
+        username:'Angela',
+        time:"56 min ago"
+    }
+]
+ const actions=[
+    {
+        action_icon:heart,
+        action_type:'Likes'
+    },
+
+    {
+        action_icon:comments_icon,
+        action_type:'Comments'
+    },
+
+    {
+        action_icon:star_icon,
+        action_type:'Activity'
+    },
+ ]
+
+
     return(
         <div className='post-content-container'>
             <div className='profile-name-wrapper'>
-                <img src="src/assets/Avatar.png" alt="" />
-                <div className='user-name-time'>
-                    <span className='username'>Angela Lee</span>
-                    <span className='time'>56min ago</span>
+            <img src={profilePhoto} alt="" />
+            { 
+                userDetails&&
+                    userDetails.map((item,index)=>{
+                        const{username,time}=item
+                            return(
+                                <div className='user-name-time'>
+                                     <span className='username'>{username}</span>
+                                      <span className='time'>{time}</span>
+            
+                                 </div>
 
-                </div>
+                            )
+                    })
+            }
+               
+               
 
             </div>
             <span>Here are some photography works that I made on the weekend with some of my friends</span>
             <div className='photo-div'>
-                <img  id="photo-1"src="src\assets\images.jpeg" alt="" />
-                <img src="src\assets\content-photo-1.png" alt="" />
+                <img  id='photo-1' src={dp} alt="" />
+                <img src={content} alt="" />
             </div>
 
             <div className="actions">
-                <div className='action'>
-                    <img src="src\assets\heart-outline.svg" alt="" />
-                    <span>Likes</span>
-                </div>
+                {
+                    actions&&
+                      actions.map((item,index)=>{
+                            const {action_icon,action_type}=item
+                                return(
+                                    <div className='action' key={index}>
+                                        <img src={action_icon} alt="" />
+                                        <span>{action_type}</span>
+                                    </div>
+                                )
+                      })
+                }
 
-                <div className='action'>
-                    <img src="src\assets\chatbubble-ellipses-outline.svg" alt="" />
-                    <span>Comments</span>
-                </div>
-                <div className='action'>
-                    <img src="src\assets\star-outline.svg" alt="" />
-                    <span>Activity</span>
-                </div>
             </div>
 
             <div className='comment-input'>
                 <input type="text" placeholder='write a comment' />
-                <img src="src\assets\happy-outline.svg" alt="" />
+                <img src={happy_icon} alt="" />
             </div>
 
         </div>

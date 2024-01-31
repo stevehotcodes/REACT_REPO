@@ -1,6 +1,23 @@
 import './Contacts.scss'
 import  profile2 from '../assets/profile-image-2.jpg'
 
+const ContactArray=[
+    {
+        profileImage:profile2,
+        username:'Jane Doe'
+    },
+    {
+        profileImage:profile2,
+        username:'Jane Doe'
+    }, 
+    {
+        profileImage:profile2,
+        username:'Jane Doe'
+    },  
+     
+    
+]
+
 
 const Contacts =()=>{
 
@@ -13,26 +30,23 @@ const Contacts =()=>{
 
             </div>
             <div className='contact-list'>
-                <div className="contact-item">
-                    <img src={profile2} alt="" />
-                    <span>Jane Doe</span>
-                </div>
+                {
+                    ContactArray&&
+                        ContactArray.map((item,index)=>{
+                            const{profileImage,username}=item
 
-                <div className="contact-item">
-                    <img src={profile2} alt="" />
-                    <span>Jane Doe</span>
-                </div>
+                            return(
+                                <div className='contact-item'>
+                                     <img src={profileImage} alt="" />
+                                     <span>{username}</span>
+                
+                                 </div>
 
-                <div className="contact-item">
-                    <img src={profile2} alt="" />
-                    <span>Jane Doe</span>
-                </div>
+                            )
+                        })
+                }
+               
 
-                <div className="contact-item">
-                    <img src={profile2} alt="" />
-                    <span>Jane Doe</span>
-                </div>
-            
                 
 
         

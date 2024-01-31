@@ -1,4 +1,5 @@
 import './Groups.scss'
+import { ShortcutArray } from './Shortcuts'
 
 
 
@@ -12,20 +13,18 @@ const Groups=()=>{
 
         </div>
         <div className='contact-list'>
-            <div className="contact-item">
-                <img src="" alt="" />
-                <span>Design Enthusiast</span>
-            </div>
-
-            <div className="contact-item">
-                <img src="" alt="" />
-                <span>UI Official</span>
-            </div>
-
-            <div className="contact-item">
-                <img src="" alt="" />
-                <span>Web Design</span>
-            </div>
+            {
+                ShortcutArray&&
+                  ShortcutArray.map((item,index)=>{
+                      const{icon_name}=item
+                        return(
+                            <div className="contact-item" key={item}>
+                                 <img src={icon_name} alt="" />
+                                 <span>Design Enthusiast</span>
+                             </div>
+                        )
+                  })
+            }
         
             
 

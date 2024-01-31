@@ -1,4 +1,7 @@
 import './PhotoSideBar.scss'
+import thumbnail2 from '../assets/photo-thumbnail-2.png'
+import thumbnail3 from "../assets/photos-thumbnails.png"
+
 
 const PhotoSideBar=()=>{
     return(
@@ -8,8 +11,8 @@ const PhotoSideBar=()=>{
                 <p>See all</p>
             </div>
             <div className='photo-div'>
-                <img src="src\assets\photo-thumbnail-2.png" alt="photo-1" />
-                <img src="src\assets\photos-thumbnails.png" alt="" />
+                <img src={thumbnail2} alt="photo-1" />
+                <img src={thumbnail3} alt="" />
             </div>
         </div>
     )
