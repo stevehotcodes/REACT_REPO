@@ -1,8 +1,20 @@
-# React + Vite
+# REACT HOOK FORM AND YUP PACKAGE 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## In this section we are using react form hooks and yup to 
+        -- control user inputs 
+        -- validate input 
+        -- error handling
 
-Currently, two official plugins are available:
+## To use react hook form you need to install these packages
+    -- react hook forms
+    -- yup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## If you are using pnpm/npm install as follow:
+  -- pnpm install react-hook-form yup
+
+
+## In your component(forms) import the useForm hook from react-hook-form
+     -- destructure the register,formState, handleSubmit method from the useForm hook
+            const{register, handleSubmit, formState:{errors}}
+     -- for the formState method, destructure the errors 
+ 
