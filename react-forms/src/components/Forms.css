@@ -1,0 +1,9 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+p{
+    color:red;
+    font-size: 10px;
+}
