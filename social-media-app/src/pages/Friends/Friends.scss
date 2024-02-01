@@ -1,0 +1,69 @@
+.friends-container{
+    width:99%;
+    border-right:2px solid rgb(196, 196, 196);
+    background-color: #F8FAFC;
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    
+ .friend-card{
+    background-color:#eceff1;
+    border:0.2px solid white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 2px gray;
+    width:500px;
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    align-items: center;
+
+    .top-card-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      
+        padding:4px;
+        width:97%;
+
+        .photo-name{
+            display: flex;
+            .name-wrapper{
+                display: flex;
+                flex-direction: column;
+                span:nth-child(1){
+                    font-weight: 700;
+                }
+                span:nth-child(2){
+                    font-size:12px
+                }
+            }
+            
+        }
+    }
+
+    .message-btn{
+        width:97%;
+        // border:2px solid red;
+        border-radius:1rem ;
+        text-align: center;
+        padding:0.4rem 0;
+        background-color: #fff;
+    }
+    .message-btn:hover{
+       color:white;
+       background-color: blue;
+    }
+    
+    
+
+ }
+
+  
+            
+
+ }
+
+    

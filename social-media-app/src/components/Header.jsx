@@ -4,6 +4,10 @@ import "./Header.scss"
 const Header =()=>{
     return(
         <div className="header-wrapper">
+              <div className="logo-img">
+                <img src="src/assets/logo.png
+                " alt="" />
+            </div>
             <div className="search-wrapper" > 
                 <img src="src/assets/search-outline.svg" alt="" />
                 <input type="search" name="" id=""  placeholder="search"/>

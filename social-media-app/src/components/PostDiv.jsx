@@ -4,8 +4,8 @@ import live_video_icon2 from '../assets/videocam-outline.svg'
 import  actvity from '../assets/videocam-outline.svg'
 import Avatar from '../assets/Avatar.png'
 
-const PostDiv=()=>{
-  const PostArray=[
+
+export  const PostArray=[
     {
         postImage:live_video_icon,
         imageDetails:'Live Video'
@@ -20,6 +20,13 @@ const PostDiv=()=>{
     }
 
   ]
+
+
+
+
+
+const PostDiv=()=>{
+  
 
 
     return(

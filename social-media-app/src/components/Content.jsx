@@ -6,42 +6,50 @@ import PostDiv from './PostDiv'
 import ProfileCompletion from './ProfileCompletion'
 import backgroundImage from '../assets/background.jpeg'
 import Avatar from '../assets/Avatar.png'
+import Friends from '../pages/Friends/Friends'
+import Profile from '../pages/Profile/Profile'
+import {Routes} from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Timeline from '../pages/Timeline/Timeline'
+
+
 
 const Content=()=>{
 
-    const accountDetails=[
-        {
-            avatar:Avatar,
-            full_name:'Angela Lee',
-            username:'@angela lee'
-        }
-    ]
+    // const accountDetails=[
+    //     {
+    //         avatar:Avatar,
+    //         full_name:'Angela Lee',
+    //         username:'@angela lee'
+    //     }
+    // ]
 
-    const accountStats=[
-        {
-            type:'Posts',
-            total:78
-        },
-        {
-            type:'FRIENDS',
-            total:'7.8K'
-        },
-        {
-            type:'PHOTS',
-            total:2978
-        },
-        {
-            type:'LIKES',
-            total:'102.68K'
-        },
+    // const accountStats=[
+    //     {
+    //         type:'Posts',
+    //         total:78
+    //     },
+    //     {
+    //         type:'FRIENDS',
+    //         total:'7.8K'
+    //     },
+    //     {
+    //         type:'PHOTS',
+    //         total:2978
+    //     },
+    //     {
+    //         type:'LIKES',
+    //         total:'102.68K'
+    //     },
 
-    ]
+    // ]
 
 
 
     return(
+        
         <div className='content-container'>
-            <div className='image-wrapper'>
+            {/* <div className='image-wrapper'>
                 <img src={backgroundImage} alt="" />
             </div>
             <div className='account-details'>
@@ -59,7 +67,6 @@ const Content=()=>{
                         })
                 }
                 
-
                 <div className='account-stats'>
                     
                         {
@@ -77,6 +84,7 @@ const Content=()=>{
                                 })
                         }
                 </div>
+                
             </div>
             <div className='post-wrapper'>
                 <div className='left-post-wrapper'>
@@ -91,9 +99,24 @@ const Content=()=>{
                     <PostContent/>
                     <PostContent/>
                 </div>
-            </div>
+            </div> */}
+             
+            <Routes>
+                 <Route path='/profile'  exact element={<Profile/>} ></Route>
+                 <Route path='/friends'  element={<Friends/>} ></Route>
+                 <Route path='/timeline'  element={<Timeline/>} ></Route>
+              
+
+            </Routes>
+          
+         
+            
+
+   
+         {/* <Profile/> */}
 
         </div>
+        
     )
 }
 

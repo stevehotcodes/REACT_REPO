@@ -9,32 +9,32 @@ import profilePhoto from "../assets/Avatar.png"
 
 
 
-const PostContent =()=>{
+const PostContent =({userDetails,actions})=>{
 
 
-const userDetails=[
-    {
-        profilePhoto:profilePhoto,
-        username:'Angela',
-        time:"56 min ago"
-    }
-]
- const actions=[
-    {
-        action_icon:heart,
-        action_type:'Likes'
-    },
+// const userDetails=[
+//     {
+//         profilePhoto:profilePhoto,
+//         username:'Angela',
+//         time:"56 min ago"
+//     }
+// ]
+//  const actions=[
+//     {
+//         action_icon:heart,
+//         action_type:'Likes'
+//     },
 
-    {
-        action_icon:comments_icon,
-        action_type:'Comments'
-    },
+//     {
+//         action_icon:comments_icon,
+//         action_type:'Comments'
+//     },
 
-    {
-        action_icon:star_icon,
-        action_type:'Activity'
-    },
- ]
+//     {
+//         action_icon:star_icon,
+//         action_type:'Activity'
+//     },
+//  ]
 
 
     return(

@@ -5,45 +5,55 @@ import Groups from '../assets/people-outline.svg'
 import Videos from  '../assets/videocam-outline.svg'
 import Photos from '../assets/image-outline.svg'
 import Events from '../assets/calendar-outline.svg'
+import { NavLink } from 'react-router-dom'
 
 const Menu=()=>{
  const MenuArray=[
     {
         image:Timeline,
-        info:'Timeline'
+        info:'Timeline',
+        path:'/timeline'
     },
     { 
         image:Friends,
-        info:'Friends'  
+        info:'Friends',
+        path:'/friends'
     },
     { 
         image:Groups,
-        info:'Groups'  
+        info:'Groups',
+        path:'/groups'  
     },
     { 
         image:Videos,
-        info:'Videos'  
+        info:'Videos',
+        path:'/videos'  
     },
     { 
         image:Photos,
-        info:'Photos'  
+        info:'Photos',
+        path:'/photos'  
     },
     {
         image:Events,
-        info:'Events'
+        info:'Events',
+        path:'/events'
     }
  ]
     return(
         <div className='menu-container'>
             
             {MenuArray && MenuArray.map((item,index)=>{
-             const {image,info}=item
+             const {image,info,path}=item
              
             return( 
-                <div className="menu-item" key={index}>
+                <NavLink  to= {path}  className="menu-item" key={index}>
                     <img src={image}  />
                     <span>{info}</span>
-                </div>)
+                </NavLink>
+
+                
+                )
             })}
 
         </div>

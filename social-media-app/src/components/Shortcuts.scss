@@ -6,6 +6,13 @@
     justify-content: center;
     align-items: center;
 
+    .section-title{
+        display:flex;
+        align-items: center;
+        gap:90px;
+        justify-content: space-betw;
+        // width:99%
+    }
     .shortcut-item{
         display: flex;
         justify-content: center;

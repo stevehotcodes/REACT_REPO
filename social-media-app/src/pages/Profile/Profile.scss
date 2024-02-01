@@ -1,15 +1,15 @@
 .content-container{
-    width:80vw;
+    width:99%;
     border-right:2px solid rgb(196, 196, 196);
-    margin:0 auto;
+    
     background-color: #F8FAFC;
-    height:100vh;
-    overflow:auto;
-   
+    // padding:10px;
+    // border:2px solid red;
 
 
     .image-wrapper{
         width:100%;
+        
         background-image:"url(src/assets/unsplash__nWaeTF6qo0.png)";
         background-position: center;
 
@@ -33,7 +33,9 @@
             align-items: center;
             gap:20px;
             width:100%;
-             img{
+            // background-color: red;
+
+            img{
                 
                 width:60px;
                 height:60px;
@@ -44,7 +46,10 @@
                 flex-direction: column;
                 justify-content: space-evenly;
                 gap:-12px;
-        
+                // background-color: red;
+                // border:2px solid red;
+
+
             }
 
             h5{
@@ -55,12 +60,14 @@
             .account-stats{
                 display: flex;
                 justify-content: space-evenly;
+                // border: 2px solid;
                 width:80%;
 
                 div{
                     display: flex;
                     flex-direction: column;
                     align-items:center;
+                    // justify-content: center;
                     border-left: 2px solid rgb(72, 72, 77);
                 }
             }

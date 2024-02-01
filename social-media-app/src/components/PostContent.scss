@@ -5,6 +5,8 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    // border:2px solid red;
+    
 
     .profile-name-wrapper{
         display: flex;
@@ -25,11 +27,9 @@
             .time{
                 color:gray;
                 font-size:12px;
-            }
-
+           }
         }
-        
-        
+    
 
     }
 
@@ -82,7 +82,6 @@
             height:25px;
 
          }
-
 
     }
 
