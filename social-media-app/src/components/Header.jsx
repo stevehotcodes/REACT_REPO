@@ -1,7 +1,19 @@
+import { useState } from "react"
 import "./Header.scss"
-
+import "./"
 
 const Header =()=>{
+
+     const[isNotificationOpen, setNotificationOpen]=useState(false);
+     
+     const handleNotificationOpen=()=>{
+        setNotification(true)
+     }
+
+     
+
+
+
     return(
         <div className="header-wrapper">
               <div className="logo-img">
@@ -16,7 +28,10 @@ const Header =()=>{
             <div className="header-actions">
                 <div className="actions">
                     <img src="src/assets/chatbubble-ellipses-outline.svg" alt="chat" />
-                    <img src="src/assets/notifications-outline.svg" alt="notofication" />
+                    <img src="src/assets/notifications-outline.svg" alt="notofication"  onClick={()=>{handleNotificationOpen}} />
+                    {
+                         
+                    }
                     <img src="src/assets/Avatar.png" alt="avatar" />
                 </div>
                

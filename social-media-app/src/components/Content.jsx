@@ -49,71 +49,14 @@ const Content=()=>{
     return(
         
         <div className='content-container'>
-            {/* <div className='image-wrapper'>
-                <img src={backgroundImage} alt="" />
-            </div>
-            <div className='account-details'>
-                {
-                    accountDetails&&
-                        accountDetails.map((item, index)=>{
-                            const{avatar,full_name,username}=item
-                            return(
-                                <><img className='avatar' src={avatar} alt="" /><div className='content-user-name' key={index}>
-                                    <h5>{full_name}</h5>
-                                    <p>{username}</p>
-
-                                </div></>
-                            )
-                        })
-                }
-                
-                <div className='account-stats'>
-                    
-                        {
-                            accountStats&&
-                                accountStats.map((item,index)=>{
-                                    const{type,total}=item
-                                        return(     
-                                            <div className='posts-number' key={index}>
-                                                <h5>{type}</h5>
-                                                 <p >{total}</p>
-                                             </div>
-                                            
-                                            
-                                        )
-                                })
-                        }
-                </div>
-                
-            </div>
-            <div className='post-wrapper'>
-                <div className='left-post-wrapper'>
-                        <ProfileCompletion/>
-                        <Intro/>
-                        <PhotoSideBar/>
-
-                </div>
-
-                <div className='right-post-wrapper'>
-                    <PostDiv/>
-                    <PostContent/>
-                    <PostContent/>
-                </div>
-            </div> */}
-             
+          
             <Routes>
                  <Route path='/profile'  exact element={<Profile/>} ></Route>
                  <Route path='/friends'  element={<Friends/>} ></Route>
                  <Route path='/timeline'  element={<Timeline/>} ></Route>
-              
-
+        
             </Routes>
           
-         
-            
-
-   
-         {/* <Profile/> */}
 
         </div>
         
