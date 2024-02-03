@@ -12,31 +12,6 @@ import profilePhoto from "../assets/Avatar.png"
 const PostContent =({userDetails,actions})=>{
 
 
-// const userDetails=[
-//     {
-//         profilePhoto:profilePhoto,
-//         username:'Angela',
-//         time:"56 min ago"
-//     }
-// ]
-//  const actions=[
-//     {
-//         action_icon:heart,
-//         action_type:'Likes'
-//     },
-
-//     {
-//         action_icon:comments_icon,
-//         action_type:'Comments'
-//     },
-
-//     {
-//         action_icon:star_icon,
-//         action_type:'Activity'
-//     },
-//  ]
-
-
     return(
         <div className='post-content-container'>
             <div className='profile-name-wrapper'>
@@ -49,8 +24,7 @@ const PostContent =({userDetails,actions})=>{
                                 <div className='user-name-time'>
                                      <span className='username'>{username}</span>
                                       <span className='time'>{time}</span>
-            
-                                 </div>
+                                </div>
 
                             )
                     })

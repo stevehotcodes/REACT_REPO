@@ -2,25 +2,26 @@ import React from 'react'
 import '../Notification/Notification.scss'
 import Modal from '../../components/Modal'
 import { useState } from 'react'
+import { useReducer } from 'react'
+import AppReducer, { initialState } from '../../reducers/AppReducer'
 
 
 
-const Notification = () => {
-   const[open, setOpen]=useState(false);
-
-
-   const handleOpen=()=>{
-      setOpen(true)
-   }
-
-   const handleClose=()=>{
-    setOpen(false)
-   }
-    
+const Notification = ({handleOnClose ,style}) => {
+   const[state, dispatch]=useReducer(AppReducer,initialState);
+   
+      
   return (
-    <div className='notificaton-wrapper'>
-        <p>This is the notification wrapper</p>
+    <div className='notification-wrapper' style={style}>
+        <div className='notification-content-container'>
+            <div className='title-bar'>
+              <p className='notification-title'> Notification</p>
+              <button type='button' onClick={handleOnClose}>x</button>
+            </div>
+        </div>
+        
     </div>
+    
      
   )
 }

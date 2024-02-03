@@ -1,16 +1,22 @@
 import Header from "../components/Header"
 import ContentLayout from "./ContentLayout"
 import "./Main.scss"
-
+import { useReducer } from "react"
+import AppReducer, { initialState } from "../reducers/AppReducer"
 
 
 const Main=()=>{
-
-    return(
+     return(
        
         <div className="main-container">
             <Header/>
             <ContentLayout/>
+            {/* <div>
+                {state.isNavigationOpen &&(
+                    <Notification handleOnClose={handleNavigationClose}/>
+                )}
+            </div> */}
+
         </div>
         
     )
@@ -18,3 +24,4 @@ const Main=()=>{
 }
 
 export default Main
+
