@@ -37,6 +37,71 @@
                
             }
 
+
+        }
+        
+        .notification-menu{
+            display :flex;
+            // background-color: yellow;
+            justify-content: flex-start;
+            gap:4px;
+
+            span{
+                font-size:12px;
+                color:rgb(87, 87, 223);
+                padding:2px;
+                margin:4px;
+                background-color: #eff6ff;
+                border-radius: 5px;
+
+            }
+            span:nth(1){
+                font-weight:bold;
+            }
+            
+
+
+        }
+
+        .notifications-content{
+            display: flex;
+            flex-direction:column;
+            overflow: scroll;
+            gap:1rem;                .notifications{
+                    display: flex;
+                    justify-content: space-evenly;
+                    gap:10rem;
+                    .user-wrapper{
+                        display: flex;
+
+                        img{
+                            width:40px;
+                            height:40px;
+                        }
+    
+                        .names{
+                            display: flex;
+                            flex-direction: column;
+                            .username{
+                                font-size: 14px;
+                                font-weight:700;
+                            }
+                            span{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    
+
+                    .time{
+                        font-size: 14px;
+                        // margin-left:15rem;
+                    }
+                }
+        }
+        h3{
+            color:#d9dbdf
         }
 
         

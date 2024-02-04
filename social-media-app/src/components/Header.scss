@@ -6,6 +6,7 @@
     justify-content: space-evenly;
     border-bottom: 2px solid rgb(219, 218, 218);
     // gap:100px;
+    padding: 1.2rem;
     
 
     .search-wrapper{
@@ -36,15 +37,18 @@
         // margin-left:50px;
         justify-content: flex-end;
         // margin-right:-50%;
+        
         .actions{
             width:100%;
             // border:2px solid blue;
             display: flex;
             justify-content: flex-end;
+            
         }
         img{
             width:30px;
             height:30px;
+            margin:0.7rem;
         }
     }
 }

@@ -11,6 +11,7 @@ import Profile from '../pages/Profile/Profile'
 import {Routes} from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Timeline from '../pages/Timeline/Timeline'
+import Photos from '../pages/Photos/Photos'
 
 
 
@@ -54,6 +55,7 @@ const Content=()=>{
                  <Route path='/profile'  exact element={<Profile/>} ></Route>
                  <Route path='/friends'  element={<Friends/>} ></Route>
                  <Route path='/timeline'  element={<Timeline/>} ></Route>
+                 <Route path='/photos' element={<Photos/>}></Route>
         
             </Routes>
           
