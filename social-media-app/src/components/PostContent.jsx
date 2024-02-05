@@ -21,7 +21,7 @@ const PostContent =({userDetails,actions})=>{
                     userDetails.map((item,index)=>{
                         const{username,time}=item
                             return(
-                                <div className='user-name-time'>
+                                <div className='user-name-time' key={index}>
                                      <span className='username'>{username}</span>
                                       <span className='time'>{time}</span>
                                 </div>
