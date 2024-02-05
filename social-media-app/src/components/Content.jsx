@@ -14,6 +14,7 @@ import Timeline from '../pages/Timeline/Timeline'
 import Photos from '../pages/Photos/Photos'
 import Events from '../pages/Events/Events'
 import Groups from '../pages/Groups/Groups'
+import Videos from '../pages/Videos/Videos'
 
 
 
@@ -54,12 +55,13 @@ const Content=()=>{
         <div className='content-container'>
           
             <Routes>
-                 <Route path='/profile'  exact element={<Profile/>} ></Route>
-                 <Route path='/friends'  element={<Friends/>} ></Route>
-                 <Route path='/timeline'  element={<Timeline/>} ></Route>
+                 <Route path='/profile' exact element={<Profile/>} ></Route>
+                 <Route path='/friends' element={<Friends/>} ></Route>
+                 <Route path='/timeline'element={<Timeline/>} ></Route>
                  <Route path='/photos' element={<Photos/>}></Route>
                  <Route path='/events' element={<Events/>}></Route>
                  <Route path='/groups' element={<Groups/>}></Route>
+                 <Route path='/videos' element={<Videos/>}></Route>
         
             </Routes>
           
