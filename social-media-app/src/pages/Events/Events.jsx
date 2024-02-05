@@ -4,6 +4,10 @@ import { FaEllipsis } from 'react-icons/fa6'
 import Eventphoto from '../../assets/event_photo-1.png'
 
 const Events = () => {
+
+
+
+
   return (
     <div className='event-container'>
         <div class="event-title-bar"> 

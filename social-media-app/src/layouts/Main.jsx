@@ -3,6 +3,7 @@ import ContentLayout from "./ContentLayout"
 import "./Main.scss"
 import { useReducer } from "react"
 import AppReducer, { initialState } from "../reducers/AppReducer"
+import Login from "../pages/Login/Login"
 
 
 const Main=()=>{
@@ -10,6 +11,7 @@ const Main=()=>{
        
         <div className="main-container">
             <Header/>
+        
             <ContentLayout/>
             {/* <div>
                 {state.isNavigationOpen &&(
