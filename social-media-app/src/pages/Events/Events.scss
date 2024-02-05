@@ -1,0 +1,142 @@
+.event-container{
+    width:99%;
+    border-right:2px solid rgb(243, 243, 243);
+    background-color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:20px;
+    padding:1rem;
+    justify-content: center;
+
+    .event-title-bar{
+        font-weight:700;
+        font-size:1.25rem;
+        display:flex;
+        justify-content: space-around;
+        gap:5rem;
+    }
+    .events-selectors{
+        display:flex;
+        gap:8px;
+        
+        span{
+            color:#c5c6c7;
+            padding:12px;
+        }
+        span:hover{
+            color:blue;
+            border-bottom:2px solid blue;
+            font-weight:700;
+        }
+        span:active{
+            color:blue;
+            border-bottom:2px solid blue;
+        }
+        span:nth-child(1){
+            color:blue;
+            border-bottom:2px solid blue;
+            font-weight:700;
+        }
+        .november{
+            margin-left:15rem;
+            font-weight: bold;
+            color:black;
+        }
+    }
+        .events-wrapper{
+            display: flex;
+            gap:20px;
+            width:100%;
+            flex-wrap: wrap;
+
+            .event-card{
+                width:45%;
+                background-color: white;
+                padding:4px;
+            
+                
+
+                .image-div{
+                    img{
+                        width:100%;
+                    }
+                }
+
+
+                .event-details{
+                    display: flex;
+                
+                    justify-content: space-between;
+                    
+                    .event-name-host{
+                        display: flex;
+                        flex-direction: column;
+
+                        .event-host{
+                             font-weight:700;
+                             font-size:14px;
+                        }
+                        .event-name{
+                            font-size:14px;
+                        }
+                       
+                    }
+                    .date{
+                        span{
+                            font-size:12px;
+                        font-weight: bold;
+                        }
+                        
+                    }
+
+                }
+
+                .event-goers{
+
+                    color: #c5c6c7;
+                    // border:0.3px solid gray;
+                       span{ 
+                          padding:1rem
+                       }   
+
+              }
+
+
+
+                .event-venue{
+                    background-color: white;
+                    span{
+                        font-size:12px;
+                        padding:1rem;
+                    }
+                }
+
+                .register-btn{
+                    border-radius:50%;
+                    display:flex;
+                    width:100%;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #F8FAFC;
+                    span{
+                        text-align:center;
+                        color:blue;
+                    }
+                }
+
+                
+
+            }
+        }
+    
+
+
+
+
+
+
+
+
+
+}
