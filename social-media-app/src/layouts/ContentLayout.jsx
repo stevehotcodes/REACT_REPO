@@ -5,6 +5,8 @@ import SideMenu from "./SideMenu"
 import Notification from "../pages/Notification/Notification"
 import { useReducer } from "react"
 import AppReducer, { initialState } from "../reducers/AppReducer"
+import { Routes } from "react-router-dom"
+import { Route } from "react-router-dom"
 
 const ContentLayout=()=>{
   
@@ -24,7 +26,8 @@ if(state.isNavigationOpen){
         <div className="content-wrapper">
             <SideMenu/>
                 <Content/>
-            <RightSidebar/>
+               
+            {/* <RightSidebar/> */}
             
           <div>
                 {state.isNavigationOpen &&(

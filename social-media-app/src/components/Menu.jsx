@@ -6,6 +6,7 @@ import Videos from  '../assets/videocam-outline.svg'
 import Photos from '../assets/image-outline.svg'
 import Events from '../assets/calendar-outline.svg'
 import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Menu=()=>{
  const MenuArray=[
@@ -47,10 +48,10 @@ const Menu=()=>{
              const {image,info,path}=item
              
             return( 
-                <NavLink  to= {path}  className="menu-item" key={index}>
+                <Link  to= {path}  className="menu-item" key={index}>
                     <img src={image}  />
                     <span>{info}</span>
-                </NavLink>
+                </Link>
 
                 
                 )

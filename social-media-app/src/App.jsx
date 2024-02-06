@@ -5,6 +5,8 @@ import Main from './layouts/Main'
 import Login from './pages/Login/Login'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
+import Header from './components/Header'
+import ContentLayout from './layouts/ContentLayout'
 // import { Suspense } from 'react'
 
 
@@ -16,16 +18,15 @@ function App() {
   return (
     
     <div className='root'>
-      <BrowserRouter>
-        {/* <Suspense fallback={<div>Loading...</div>}>
-           <LoginComponent />
-       </Suspense> */}
-       {/* <Routes>
-         <Route  path="/main/*" element={<Main/>}></Route>
-       </Routes> */}
+      {/* <Header/> */}
+    <Routes>
+       <Route path='/' element={<Login/>}></Route>
+        <Route path='/*' element={<Main/>}> </Route>    
+      
+    </Routes>
        
-         <Main/>
-     </BrowserRouter>
+        
+    
         
     </div>
    

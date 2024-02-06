@@ -55,7 +55,7 @@ const Content=()=>{
         <div className='content-container'>
           
             <Routes>
-                 <Route path='/profile' exact element={<Profile/>} ></Route>
+                 <Route path='/profile' exact  element={<Profile/>} ></Route>
                  <Route path='/friends' element={<Friends/>} ></Route>
                  <Route path='/timeline'element={<Timeline/>} ></Route>
                  <Route path='/photos' element={<Photos/>}></Route>

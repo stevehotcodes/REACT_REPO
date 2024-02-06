@@ -4,6 +4,16 @@ import {yupResolver} from "@hookform/resolvers/yup"
 import * as yup from 'yup'
 import {useForm} from"react-hook-form"
 import { NavLink } from 'react-router-dom'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import { useRef } from 'react'
+import { lightGreen } from '@material-ui/core/colors'
+import Home from '../Home/Home'
+import Main from '../../layouts/Main'
+import background from '../../assets/background_login.jpeg'
+
+
+// save data in the localstrorage
+
 
 
 
@@ -11,6 +21,17 @@ import { NavLink } from 'react-router-dom'
 
 
 const Login = () => {
+
+//accessing the email and password from the local stogae
+const email=useRef();
+const password=useRef();
+//check whether the data is existing in the local storage
+
+const getEmail=localStorage.getItem("email");
+const getPassword=localStorage.getItem("password");
+
+
+
 
      //validation schema 
      const schema=yup.object().shape({
@@ -23,54 +44,74 @@ const Login = () => {
     });
 
         //to use the hook form 
-        const{register, handleSubmit, formState:{errors}}=useForm({
-            resolver:yupResolver(schema)
-         });
+        // const{register, handleSubmit, formState:{errors}}=useForm({
+        //     resolver:yupResolver(schema)
+        //  });
     
-        const onSubmit=(data)=>{
-            console.log(data)
+        const handleSubmit=(e)=>{
+            e.preventDefault()
+        
+            console.log("email",email.current.value)
+            if(email.current.value=='example@gmail.com' && password.current.value=="12345"){
+                localStorage.setItem("email","example@gmail.com");
+                localStorage.setItem("password","12345")
+            }
+            else{
+                alert("users does not exist")
+            }
+
+               
+            
         }
 
 
   return (
-    <div className='login-container'>
-            <form className='form' onSubmit={handleSubmit(onSubmit)}>
-        <input 
-        placeholder='full Name'
-         type="text"
-         {...register("fullName")}/>
-            <p>{errors.fullName?.message}</p>
-        <input 
-            placeholder='Email' 
-            type="email" 
-             {...register("email")}
-        />
-         <p>{errors.email?.message}</p>
-        <input
-             placeholder='Age..' 
-             type="number" 
-             {...register("age")}
-        />
-         <p>{errors.email?.message}</p>
-        <input 
-            placeholder='password.....' 
-            type="password" 
-            {...register("password")}
+    <div className='login-container' >
+         
+
+        {
+            getEmail&&getPassword?<Main/>:<form className='form' onSubmit={handleSubmit}>
+                <h2>Login</h2>
+            {/* <input 
+            placeholder='full Name'
+             type="text"
+             {...register("fullName")}/>
+                <p>{errors.fullName?.message}</p> */}
+            <input 
+                placeholder='Email' 
+                type="email" 
+                ref={email}
+                 
             />
-             <p>{errors.password?.message}</p>
-        <input 
-            placeholder='confirm pasword.....'
-             type="password" 
-             {...register("confirmPassword")}
-             />
-              <p>{errors.confirmPassword?.message}</p>
-       <NavLink to='/main' >
-              <input placeholder='' type="submit" />
-        </NavLink>       
-       
-
-
-    </form>
+             {/* <p>{errors.email?.message}</p> */}
+            {/* <input
+                 placeholder='Age..' 
+                 type="number" 
+                 {...register("age")}
+            /> */}
+             {/* <p>{errors.email?.message}</p> */}
+            <input 
+                placeholder='password.....' 
+                type="password" 
+                ref={password}
+                // {...register("password")}
+                />
+                 {/* <p>{errors.password?.message}</p> */}
+            {/* <input 
+                placeholder='confirm pasword.....'
+                 type="password" 
+                 {...register("confirmPassword")}
+                 /> */}
+                  {/* <p>{errors.confirmPassword?.message}</p> */}
+           <NavLink to='/main' >
+                  <input placeholder='' type="submit" />
+            </NavLink>       
+           
+    
+    
+        </form>
+        }
+            
 
 
 

@@ -1,10 +1,11 @@
 .shortcut-container{
-    width:15vw;
+    width:14vw;
     display:flex;
     flex-direction:column;
     margin-top:2rem;
     justify-content: center;
     align-items: center;
+    border:2px solid red;
 
     .section-title{
         display:flex;
