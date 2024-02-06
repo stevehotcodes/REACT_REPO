@@ -27,7 +27,7 @@ if(state.isNavigationOpen){
             <SideMenu/>
                 <Content/>
                
-            {/* <RightSidebar/> */}
+            <RightSidebar/>
             
           <div>
                 {state.isNavigationOpen &&(
