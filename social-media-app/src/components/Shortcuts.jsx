@@ -26,7 +26,7 @@ const Shortcuts=()=>{
     return(
         <div className='shortcut-container'>
         <div className='section-title'>
-            <h3>Your Pages</h3>
+            <span className='your-pages'>Your Pages</span>
             <span>See all</span>
         </div>
             {ShortcutArray&& 

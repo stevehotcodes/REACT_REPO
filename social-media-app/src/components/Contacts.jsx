@@ -1,3 +1,4 @@
+import React from 'react'
 import './Contacts.scss'
 import  profile2 from '../assets/profile-image-2.jpg'
 
@@ -25,7 +26,7 @@ const Contacts =()=>{
     return(
         <div className='contacts-container'>
             <div className='contact-title'>
-                <h3>Contacts</h3>
+                <p className="contacts">Contacts</p>
                 <span>See All</span>
 
             </div>

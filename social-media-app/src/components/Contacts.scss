@@ -1,11 +1,14 @@
 .contacts-container{
     width:100%;
     
-
     .contact-title{
         display:flex;
         align-items: center;
         justify-content: space-between;
+
+        .contact{
+            font-weight: bolder;
+        }
     }
     
     .contact-list{
