@@ -8,7 +8,7 @@ import Events from '../assets/calendar-outline.svg'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-const Menu=()=>{
+const Menu=({handleMenuClose})=>{
  const MenuArray=[
     {
         image:Timeline,
@@ -48,7 +48,7 @@ const Menu=()=>{
              const {image,info,path}=item
              
             return( 
-                <Link  to= {path}  className="menu-item" key={index}>
+                <Link  to= {path}  className="menu-item" key={index} onClick={handleMenuClose}>
                     <img src={image}  />
                     <span>{info}</span>
                 </Link>

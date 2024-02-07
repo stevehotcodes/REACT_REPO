@@ -7,6 +7,9 @@ import Notification from "../pages/Notification/Notification";
 import { useReducer } from "react";
 import AppReducer, { initialState } from "../reducers/AppReducer";
 import { IoIosMenu } from "react-icons/io";
+import SideMenu from "../layouts/SideMenu";
+import SideMenuMobile from "../layouts/SideMenu-mobile/SideMenuMobile";
+import RightSideBarMobile from "../layouts/RightSideBar-mobile/RightSideBarMobile";
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -20,6 +23,33 @@ const Header = () => {
   const handleNavigationClose = () => {
     dispatch({ type: "SET_NAVIGATION_OPEN", payload: false });
   };
+  
+  const handleMenuOpen=()=>{
+    console.log("menu actiion")
+    console.log(state.isMenuOpen)
+
+    !state.isMenuOpen?
+      dispatch({type:"SET_MENU_OPEN",payload:true}):
+      dispatch({type:"SET_MENU_OPEN",payload:false})
+
+  }
+
+
+  const handleRightBarOpen=()=>{
+    console.log("right side open");
+
+    !state.isRightBarOpen?
+     dispatch({type:"SET_RIGHT_MENU_OPEN",payload:true}):
+     dispatch({type:"SET_RIGHT_MENU_OPEN",payload:false})
+     
+    console.log(state.isRightBarOpen)
+  }
+
+
+  const style={
+    display:"block"
+  }
+
 
   return (
   <div className="header-wrapper">
@@ -31,11 +61,11 @@ const Header = () => {
             alt=""
           />
          <div className="menu-name-icon">
-            <div className="menu-name">
+            <div className="menu-name" onClick={handleMenuOpen}>
                 <IoIosMenu />
                <span>Menu</span>
               </div>
-         <IoIosMenu/>
+         <IoIosMenu  onClick={handleRightBarOpen} />
          </div>
           
         </div>
@@ -62,6 +92,20 @@ const Header = () => {
           <Notification handleOnClose={handleNavigationClose} style={{}} />
         )}
       </div>
+      {/* <div> */}
+        {
+          state.isMenuOpen &&(
+            <SideMenuMobile/>
+          )
+        }
+
+        {
+          state.isRightBarOpen&&(
+            <RightSideBarMobile/>
+          )
+        }
+
+      {/* </div> */}
      
     </div>
   );

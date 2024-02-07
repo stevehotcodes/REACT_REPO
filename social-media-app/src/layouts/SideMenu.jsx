@@ -5,7 +5,7 @@ import Avatar from '../assets/Avatar.png'
 import { NavLink } from "react-router-dom"
 
 
-const SideMenu=()=>{
+const SideMenu=({style})=>{
     return(
         <div className="side-container">
           
