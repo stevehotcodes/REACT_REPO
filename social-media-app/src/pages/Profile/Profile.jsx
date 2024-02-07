@@ -91,11 +91,11 @@ const userDetails=[
                         accountDetails.map((item, index)=>{
                             const{avatar,full_name,username}=item
                             return(
-                                <><img className='avatar' src={avatar} alt="" /><div className='content-user-name' key={index}>
+                                <div className='avatar-name-div'><img className='avatar' src={avatar} alt="" /><div className='content-user-name' key={index}>
                                     <h5>{full_name}</h5>
                                     <p>{username}</p>
 
-                                </div></>
+                                </div></div>
                             )
                         })
                 }

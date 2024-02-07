@@ -30,7 +30,7 @@
     height:4em;
 
     h5{
-        margin-bottom: -20px;
+        margin-bottom: -9px;
         color:black;
 
     }
@@ -38,5 +38,14 @@
         font-size:14px;
         color:rgb(88, 85, 85)
     }
+
+
+}
+@media (max-width:767px) {
+    .side-container{
+        display: none;
+    }
+   
+    
 }
 

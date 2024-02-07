@@ -12,7 +12,7 @@ const Main=()=>{
         <div className="main-container">
             <Header/>
         
-            {/* <ContentLayout/> */}
+            <ContentLayout/>
             {/* <div>
                 {state.isNavigationOpen &&(
                     <Notification handleOnClose={handleNavigationClose}/>

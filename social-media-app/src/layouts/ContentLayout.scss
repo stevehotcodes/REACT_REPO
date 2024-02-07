@@ -2,5 +2,11 @@
     display:flex;
     width:100%;
     // border:2px solid blue;
+
+
+    @media (max-width:767px){
+        width:100vw;
+        margin: auto;
+    }
     
 }

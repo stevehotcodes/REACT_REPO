@@ -1,13 +1,22 @@
 .profile-completion-container{
     display: flex;
     flex-direction: column;
-    margin:2px;
-    width:100%;
-    background-color: white;
+    // margin:2px;
+    padding:10px;
+    width:90%;
+    background-color:white;
     border-radius:0.5rem;
 
     .progress-bar{
         display: flex;
+    }
+
+
+
+    @media (max-width:767px) {
+        width:100%;
+        flex-wrap: wrap;
+        
     }
 
     

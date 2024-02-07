@@ -1,8 +1,10 @@
 .post-container{
-    width:100%;
+    width:99vw;
     background-color: white;
     padding:4px;
+    min-width:320px;
     border-radius:2px;
+    // background-color: red;
 
 
     .profile-pic-input{
@@ -18,8 +20,8 @@
         }
 
         input{
-            width:70%;
-            height:20px;
+            width:90%;
+            height:40px;
             padding:4px;
             border:2px solid rgb(236, 234, 234);
             border-radius:1rem;
@@ -42,10 +44,22 @@
            font-weight:bolder;
            color:gray;
          }
+        
 
 
 
 
+    }
+
+    @media (max-width:767px) {
+        width:100%;
+        flex-wrap: wrap;
+
+        .actions{
+            width:100%;
+            // background-color: blue;
+            gap:-10px;
+        }
     }
 
 

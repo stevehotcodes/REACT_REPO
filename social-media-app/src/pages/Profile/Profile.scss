@@ -1,6 +1,7 @@
 .content-container{
     width:99%;
     border-right:2px solid rgb(196, 196, 196);
+    min-width:320px;
     
     background-color: #F8FAFC;
 
@@ -31,6 +32,7 @@
             gap:20px;
             width:100%;
             // background-color: red;
+            flex-wrap:wrap;
 
             img{
                 
@@ -44,13 +46,14 @@
                 justify-content: space-evenly;
                 gap:-12px;
                 // background-color: red;
+
                 // border:2px solid red;
 
 
             }
 
             h5{
-                margin-bottom: -20px;
+                margin-bottom: -8px;
 
             }
 
@@ -75,6 +78,9 @@
         width:100%;
         display: flex;
         gap:20px;
+        // background-color: red;
+        
+        
 
         .left-post-wrapper{
             width:20%;
@@ -84,7 +90,42 @@
         }
 
     }
+    
+    @media(max-width:767px){
+        border-right:none;
+        .account-details{
+            img{
+                margin:0 auto;
+            }
+        }
+        .avatar-name-div{
+            // background-color:blue;
+            margin: -18px auto;
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+            img{
+                width:120px;
+                height:120px;
+            }
+        }
+
+        .post-wrapper{
+            flex-wrap:wrap;
+            width:99.0vw;
+            gap:2rem;
+            flex-grow: 1;
+
+
+            .right-post-wrapper{
+                // border:2px solid red;
+                margin-top:1rem;
+                width:100%;
+            }
+
             
+        }
+    }
 
  }
 
