@@ -7,7 +7,6 @@ const Events = () => {
 
 
 
-
   return (
     <div className='event-container'>
         <div class="event-title-bar"> 

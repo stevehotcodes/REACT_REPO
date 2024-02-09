@@ -1,6 +1,7 @@
 .timeline-container{
  
     width:80%;
+    min-width:320px;
     margin:0 auto;
      display: flex;
     flex-direction: column;
@@ -10,10 +11,11 @@
 
 
     .your-timeline-card{
-        // border:3px solid green;
         display: flex;
         flex-direction: column;
-
+        margin-top:1.2rem;
+        border:2px solid red;
+        
         .header{
             display: flex;
             justify-content: flex-start;
@@ -25,7 +27,17 @@
 
 
             }
-        }      
+        }   
+        
+        .carousel{
+            display: flex;
+            gap:0.5rem;
+            align-items: center;
+            padding:1rem;
+            width:95%;
+            overflow:scroll;
+            
+        }
 
             
     }
@@ -38,6 +50,7 @@
         background-color: white;
         padding:4px;
         border-radius:2px;
+        padding:1rem;
     
         .profile-user-name-wrapper{
             display: flex;
@@ -46,6 +59,7 @@
             margin:4px;
             background-color: rgb(255, 255, 255);
             box-shadow: 5px 5px 5px white;
+            padding:1rem;
             .names{
                 display: inherit;
                 align-items: center;
@@ -69,7 +83,11 @@
     
         .post-input{
             margin:2px;
-            width:80%;
+            width:49.5rem;
+            height:4rem;
+            padding:0.4rem;
+            // border:2px solid red;
+            background-color: #aacef030;
             display: flex;
             align-items: center;
             gap:2px;
@@ -81,11 +99,15 @@
             }
     
             input{
-                width:70%;
-                height:20px;
+                
+                height:2.8rem;
                 padding:4px;
                 border:2px solid rgb(236, 234, 234);
                 border-radius:1rem;
+                outline: none;
+                border:none;
+                
+                
                 
             }
         }
@@ -113,5 +135,43 @@
     
     
     
+    }
+
+
+    @media(max-width:767px){
+        flex-wrap:wrap;
+        width:100vw;
+        border:2px solid red;
+        justify-content: center;
+
+        
+    .your-timeline-card{
+        display: flex;
+        flex-direction: column;
+        margin-top:1.2rem;
+        border:2px solid red;
+        
+        .header{
+            display: flex;
+            justify-content: flex-start;
+
+            
+        }   
+        
+        .carousel{
+            display: flex;
+            gap:0.5rem;
+            flex-shrink:1;
+            // flex-wrap: wrap;
+        
+            align-items: center;
+            padding:0.8rem;
+            max-width:97vw;
+            overflow:scroll;
+            
+        }
+
+            
+    }
     }
 }

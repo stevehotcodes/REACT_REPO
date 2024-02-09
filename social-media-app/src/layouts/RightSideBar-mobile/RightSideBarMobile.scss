@@ -2,7 +2,7 @@
     
     background-color: rgba(0,0,0,0.6);
     width:100vw;
-    min-height:150%;
+    min-height:200vh;
     position: absolute;
     top:0;
     right:-0.15rem;
@@ -14,7 +14,7 @@
         flex-direction: column;
         width:70vw;
         background-color: white;   
-        min-height: 100vh;
+        min-height: 100%;
         display:flex;
         flex-direction:column;
         align-items: center;

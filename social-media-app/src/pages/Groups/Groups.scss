@@ -1,7 +1,8 @@
 .groups-container{
     width:99%;
     // padding:22px;   
-    border-right:2px solid rgb(243, 243, 243);
+    border: 2px solid red;
+    // border-right:2px solid rgb(243, 243, 243);
     background-color: #F8FAFC;
     display: flex;
     flex-direction: column;
@@ -113,6 +114,12 @@
         }
 
     }
+
+    @media (max-width:767px){
+
+        flex-wrap:wrap;
+    }
+
 
     
 }

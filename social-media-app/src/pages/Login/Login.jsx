@@ -103,7 +103,7 @@ const getPassword=localStorage.getItem("password");
                  {...register("confirmPassword")}
                  /> */}
                   {/* <p>{errors.confirmPassword?.message}</p> */}
-           <NavLink to='/main' >
+           <NavLink to='/timeline' >
                   <input placeholder='' type="submit" />
             </NavLink>       
            

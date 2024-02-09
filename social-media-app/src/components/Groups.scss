@@ -26,8 +26,10 @@
         flex-direction:column;
         justify-content: center;
         // align-items: center;
+        flex-wrap:wrap;
         padding:12px;
         gap:10px;
+        border:2px solid red;
         
 
         .group-item{
@@ -44,6 +46,16 @@
             }
             span{
                 font-weight:bolder;
+            }
+        }
+    }
+
+
+    @media(max-width:767px){
+        .group-list{
+            background-color: blue;
+            .group-item{
+                width:100%;
             }
         }
     }

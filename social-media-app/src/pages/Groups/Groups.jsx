@@ -23,6 +23,29 @@ const Groups = () => {
               <div className='groups-suggested'>
                    <div className='group-card'>
                       <div className='group-name'>
+                                  
+                          <div className='group-icon'>
+                             <span>UD</span>
+                          </div>
+                          <div className='group-details'>
+                             <span>UI/Ux Designer</span>
+                              <span>Bandung</span>
+                          </div>
+                          <FaEllipsis/>
+                      </div>
+                      <div className='group-image'>
+                         <img src={MaskGroup} alt="" />
+                      </div>
+
+                      <div className='join-group-btn'>
+                        <span>Join group</span>
+                      </div>
+                     
+                   </div>
+                  
+                   <div className='group-card'>
+                     
+                      <div className='group-name'>
 
                           <div className='group-icon'>
                              <span>UD</span>
@@ -42,7 +65,30 @@ const Groups = () => {
                       </div>
                      
                    </div>
+                    
                    <div className='group-card'>
+                      <div className='group-name'>
+                                 
+                          <div className='group-icon'>
+                             <span>UD</span>
+                          </div>
+                          <div className='group-details'>
+                             <span>UI/Ux Designer</span>
+                              <span>Bandung</span>
+                          </div>
+                          <FaEllipsis/>
+                      </div>
+                      <div className='group-image'>
+                         <img src={MaskGroup} alt="" />
+                      </div>
+
+                      <div className='join-group-btn'>
+                        <span>Join group</span>
+                      </div>
+                     
+                   </div>
+                   <div className='group-card'>
+                     
                       <div className='group-name'>
 
                           <div className='group-icon'>
@@ -65,6 +111,7 @@ const Groups = () => {
                    </div>
 
                    <div className='group-card'>
+                     
                       <div className='group-name'>
 
                           <div className='group-icon'>
@@ -87,27 +134,59 @@ const Groups = () => {
                    </div>
 
                    <div className='group-card'>
-                      <div className='group-name'>
-
-                          <div className='group-icon'>
-                             <span>UD</span>
-                          </div>
-                          <div className='group-details'>
-                             <span>UI/Ux Designer</span>
-                              <span>Bandung</span>
-                          </div>
-                          <FaEllipsis/>
-                      </div>
-                      <div className='group-image'>
-                         <img src={MaskGroup} alt="" />
-                      </div>
-
-                      <div className='join-group-btn'>
-                        <span>Join group</span>
-                      </div>
                      
-                   </div>
+                     <div className='group-name'>
 
+                         <div className='group-icon'>
+                            <span>UD</span>
+                         </div>
+                         <div className='group-details'>
+                            <span>UI/Ux Designer</span>
+                             <span>Bandung</span>
+                         </div>
+                         <FaEllipsis/>
+                     </div>
+                     <div className='group-image'>
+                        <img src={MaskGroup} alt="" />
+                     </div>
+
+                     <div className='join-group-btn'>
+                       <span>Join group</span>
+                     </div>
+                    
+                  </div>
+                  <div className='group-card'>
+                     
+                     <div className='group-name'>
+
+                         <div className='group-icon'>
+                            <span>UD</span>
+                         </div>
+                         <div className='group-details'>
+                            <span>UI/Ux Designer</span>
+                             <span>Bandung</span>
+                         </div>
+                         <FaEllipsis/>
+                     </div>
+                     <div className='group-image'>
+                        <img src={MaskGroup} alt="" />
+                     </div>
+
+                     <div className='join-group-btn'>
+                       <span>Join group</span>
+                     </div>
+                    
+                  </div>
+
+
+                  
+
+                   
+
+              </div>
+
+              <div className='recent-activity'>
+               
               </div>
 
         </div>

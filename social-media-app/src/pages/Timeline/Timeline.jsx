@@ -7,7 +7,9 @@ import { PostArray } from '../../components/PostDiv'
 import PostContent from '../../components/PostContent'
 import Avatar from '../../assets/Avatar.png'
 import { NavLink } from 'react-router-dom'
+import { timelinePhotos } from '../../data/timeline'
 const postData=PostArray
+
 
 const Timeline = () => {
   return (
@@ -17,7 +19,15 @@ const Timeline = () => {
             <span>Your Timeline</span>
           </div>
           <div className='carousel'>      
-        {/* carousel images go here */}
+        {timelinePhotos&&timelinePhotos.map((photo,index)=>{
+          const {timeline_photo}=photo
+            return(
+              <div className='image-div' key={index}>
+                <img src={timeline_photo} alt="" />
+              </div>
+
+            )
+        })}
           </div>
       </div>
 
