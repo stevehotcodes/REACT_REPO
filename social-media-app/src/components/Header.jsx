@@ -41,6 +41,8 @@ const Header = () => {
     !state.isRightBarOpen?
      dispatch({type:"SET_RIGHT_MENU_OPEN",payload:true}):
      dispatch({type:"SET_RIGHT_MENU_OPEN",payload:false})
+
+     dispatch({type:"SET_MENU_OPEN",payload:false})
      
     console.log(state.isRightBarOpen)
   }

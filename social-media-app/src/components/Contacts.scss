@@ -6,8 +6,19 @@
         align-items: center;
         justify-content: space-between;
 
-        .contact{
+        .contacts{
             font-weight: bolder;
+            font-weight:700;
+            color:rgba(121, 121, 121,0.6);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        span:nth-child(2){
+            color:blue;
+            font-weight:700;
+            font-size: 14px;
+
         }
     }
     

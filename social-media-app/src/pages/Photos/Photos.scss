@@ -54,6 +54,35 @@
         }
     }
 
+    @media (max-width:767px){
+
+
+        .photos-wrapper{
+            
+            
+    
+            img{
+                width:150px;
+                height:150px;
+            }
+        }
+
+
+    
+    }
+
+
+    @media(min-width: 320px )and (max-width:767px){
+        .photos-wrapper{
+            
+            
+    
+            img{
+                width:110px;
+                height:110px;
+            }
+        }
+    }
   
             
 

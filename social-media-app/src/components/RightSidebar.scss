@@ -1,7 +1,8 @@
 .right-side-bar{
-    width:15%;
+    width:22%;
     height:100vh;
     display: flex;
+    
     flex-direction: column;
     @media  (max-width:767px) {
         display: none;

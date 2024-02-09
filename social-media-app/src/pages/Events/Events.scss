@@ -14,15 +14,18 @@
         font-size:1.25rem;
         display:flex;
         justify-content: space-around;
+        flex-wrap: wrap;
         gap:5rem;
     }
     .events-selectors{
         display:flex;
-        gap:8px;
+        flex-wrap: wrap;
+        align-items: center;
+        gap:6px;
         
         span{
             color:#c5c6c7;
-            padding:12px;
+            padding:10px;
         }
         span:hover{
             color:blue;
@@ -39,19 +42,22 @@
             font-weight:700;
         }
         .november{
-            margin-left:15rem;
+            margin-left:10rem;
             font-weight: bold;
             color:black;
         }
     }
         .events-wrapper{
             display: flex;
-            gap:20px;
-            width:100%;
+            gap:1.25rem;
+           width:95%;
             flex-wrap: wrap;
+            align-items: center;
+            // border: 2px solid red;
+
 
             .event-card{
-                width:45%;
+                width:47%;
                 background-color: white;
                 padding:4px;
             
@@ -129,7 +135,25 @@
             }
         }
     
+      @media (max-width:767px){
+        flex-wrap: wrap;
+        .event-title-bar{
+            gap:2rem;
+        }
 
+        .events-wrapper{
+            flex-wrap: wrap;
+            .event-card{
+                width: 100%;
+            }
+        }
+
+        .events-selector{
+            .november{
+                margin-left: -15rem;
+            }
+        }
+      }
 
 
 

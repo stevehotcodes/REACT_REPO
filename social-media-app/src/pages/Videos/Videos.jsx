@@ -26,9 +26,13 @@ const Videos = () => {
   return (
     <div className='videos-container'>
         <div className='title-bar'>
-           <h3>Videos</h3>
+          <div className='h3'>
+            <h3>Videos</h3>
+          </div>
+          
            <div className="search-icon-wrapper">
-            <FaSearch/>
+            <FaSearch className='search-icon'/>
+            <input type="text" name="" id=""  className='search-video-input' placeholder='search videos '/>
            </div>
         </div>
         

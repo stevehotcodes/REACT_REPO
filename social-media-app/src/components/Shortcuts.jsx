@@ -29,6 +29,7 @@ const Shortcuts=()=>{
             <span className='your-pages'>Your Pages</span>
             <span>See all</span>
         </div>
+        <div className='shortcut-item-container'>
             {ShortcutArray&& 
                 ShortcutArray.map((item,index)=>{
                     const{icon_details,icon_name}=item
@@ -42,6 +43,7 @@ const Shortcuts=()=>{
                 })
 
            }
+        </div>
 
         </div>
 

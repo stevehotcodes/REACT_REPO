@@ -1,35 +1,65 @@
 .shortcut-container{
-    width:14vw;
+    width:100%;
     display:flex;
     flex-direction:column;
-    margin-top:2rem;
-    justify-content: center;
+    // margin-top:2rem;
+    // justify-content: space-between;
     align-items: center;
+    padding:0.7rem;
+    margin-left: 0.9rem;
     // border:2px solid red;
 
     .section-title{
         display:flex;
         align-items: center;
-        gap:90px;
+        gap:50px;
+        width: 96%;;
         justify-content: space-between;
         // width:99%
         span.your-pages{
             font-weight:700;
-            color:black;
+            color:rgba(121, 121, 121,0.6);
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-left:-30px;
+        }
+        span:nth-child(2){
+            color:blue;
+            font-weight:700;
+            font-size: 14px;
         }
     }
-    .shortcut-item{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap:0.3125rem;
-        margin-top:1.25rem;
 
-        img{
-            width:1.375rem;
-            height:1.375rem;
+    .shortcut-item-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        width:100%;
+        // border: 2px solid black;
+        margin-right: 0.9rem;
+
+        .shortcut-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: flex-start;
+            column-gap:0.7rem;
+     
+            margin-top:1.25rem;
+            width:100%;
+
+            span{
+                font-weight: 700;
+            }
+    
+            img{
+                width:2rem;
+                height:2rem;
+            }
         }
     }
+    
 
     @media (max-width:767px){
         margin-left:1rem;
