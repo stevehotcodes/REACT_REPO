@@ -29,7 +29,7 @@
         flex-wrap:wrap;
         padding:12px;
         gap:10px;
-        border:2px solid red;
+   
         
 
         .group-item{
@@ -51,9 +51,9 @@
     }
 
 
-    @media(max-width:767px){
+    @media(max-width:1024px){
         .group-list{
-            background-color: blue;
+        
             .group-item{
                 width:100%;
             }

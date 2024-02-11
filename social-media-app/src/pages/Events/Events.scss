@@ -53,16 +53,12 @@
            width:95%;
             flex-wrap: wrap;
             align-items: center;
-            // border: 2px solid red;
-
 
             .event-card{
                 width:47%;
                 background-color: white;
                 padding:4px;
             
-                
-
                 .image-div{
                     img{
                         width:100%;
@@ -86,12 +82,13 @@
                         .event-name{
                             font-size:14px;
                         }
-                       
+                        
                     }
                     .date{
+                        
                         span{
                             font-size:12px;
-                        font-weight: bold;
+                            font-weight: bold;
                         }
                         
                     }
@@ -101,8 +98,7 @@
                 .event-goers{
 
                     color: #c5c6c7;
-                    // border:0.3px solid gray;
-                       span{ 
+                     span{ 
                           padding:1rem
                        }   
               }
@@ -118,15 +114,25 @@
                 }
 
                 .register-btn{
-                    border-radius:50%;
+                    border-radius:1rem;;
                     display:flex;
                     width:100%;
                     justify-content: center;
                     align-items: center;
-                    background-color: #F8FAFC;
+                    background-color: #f3f1f1;
+                    padding: 1rem;;
+                    // background-color: red;
                     span{
                         text-align:center;
                         color:blue;
+                        font-weight:600;
+                    }
+                }
+
+                .register-btn:hover{
+                    background-color: blue;
+                    span{
+                        color:white
                     }
                 }
 
@@ -135,7 +141,7 @@
             }
         }
     
-      @media (max-width:767px){
+      @media (max-width:1024px){
         flex-wrap: wrap;
         .event-title-bar{
             gap:2rem;

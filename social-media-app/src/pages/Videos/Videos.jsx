@@ -100,7 +100,7 @@ const Videos = () => {
                
                 const{videoImage,videoDescription}=videoItem
                   return(
-                    <>
+                    <div className='photo-video-description'>
                      <div className='photo-div'>
                         <img  id='photo-1' src={dp} alt="" />
                         <div className='username'>
@@ -118,7 +118,7 @@ const Videos = () => {
 
 
                      </div>
-                    </>
+                    </div>
                     
 
 

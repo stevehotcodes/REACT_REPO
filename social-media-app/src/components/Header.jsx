@@ -24,14 +24,25 @@ const Header = () => {
     dispatch({ type: "SET_NAVIGATION_OPEN", payload: false });
   };
   
+
+
   const handleMenuOpen=()=>{
     console.log("menu actiion")
     console.log(state.isMenuOpen)
+    // dispatch({type:"SET_MENU_OPEN",payload:false})
+    dispatch({type:"SET_RIGHT MENU_OPEN",payload:false})
 
     !state.isMenuOpen?
       dispatch({type:"SET_MENU_OPEN",payload:true}):
       dispatch({type:"SET_MENU_OPEN",payload:false})
 
+
+      dispatch({type:"SET_RIGHT MENU_OPEN",payload:false})
+
+  }
+
+  const handleMenuClose=()=>{
+    dispatch({type:"SET_RIGHT MENU_OPEN",payload:false})
   }
 
 
@@ -97,13 +108,13 @@ const Header = () => {
       {/* <div> */}
         {
           state.isMenuOpen &&(
-            <SideMenuMobile/>
+            <SideMenuMobile handleOnClose={handleMenuClose} />
           )
         }
 
         {
           state.isRightBarOpen&&(
-            <RightSideBarMobile/>
+            <RightSideBarMobile />
           )
         }
 

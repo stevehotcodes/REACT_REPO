@@ -9,13 +9,13 @@ import AppReducer, { initialState } from '../../reducers/AppReducer'
 
 
 
-const SideMenuMobile = () => {
+const SideMenuMobile = ({handleMenuClose}) => {
     const [state,dispatch]=useReducer(AppReducer,initialState)
 
-    const handleMenuClose=()=>{
-        console.log(state.isMenuOpen);
+    // const handleMenuClose=()=>{
+    //     console.log(state.isMenuOpen);
 
-    }
+    // }
     
   return (
     <div className='side-menu-layout'>
@@ -24,9 +24,10 @@ const SideMenuMobile = () => {
           
           <div className="mobile-dp-username">
               <img src={Avatar}  alt="avatar" style={{width:40, height:40}} />
-              <NavLink className="user-name" to='/profile'  > 
-                  <h5>Angela Lee</h5>
+              <NavLink className="user-name" to='/profile'   > 
+                  <h5 >Angela Lee</h5>
                   <p>@anglea lee</p>
+                  {/* <button type='button' onClick={handleMenuClose}> x</button> */}
               </NavLink>
               
       

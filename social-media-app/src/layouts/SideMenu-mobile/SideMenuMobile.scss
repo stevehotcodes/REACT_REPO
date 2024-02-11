@@ -3,7 +3,7 @@
     // border:2px solid red;
     // background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 2px solid black;
-    // z-index:2;
+    z-index:2;
     position: absolute;
     width:100vw;
     min-height: 100vh;
@@ -58,7 +58,7 @@
     }
    
     }
-    @media (min-width:767px) {
+    @media (min-width:1024px) {
     
         display: none;
         

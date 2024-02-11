@@ -6,11 +6,19 @@ import MaskGroup from '../../assets/Mask Group.png'
 const Groups = () => {
   return (
         <div className='groups-container'>
-              <div className='group-header'>
-                  <h4>Groups</h4>
+              <div className='group-header-wrapper'>
+               <div className='group-header'>
+                   <span>Groups</span>
+               </div>
+                  
                   <div className='create-new-group-btn'>
                     <span> + Create New Group</span> 
                   </div>
+                  <div className='search-input-wrapper'>
+
+                     <input type="search" name="" id=""  placeholder='search for groups'/>
+                  </div>
+                
               </div>
 
               <div className="suggested-for-you-wrapper">

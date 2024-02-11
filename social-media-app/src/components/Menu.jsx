@@ -7,8 +7,28 @@ import Photos from '../assets/image-outline.svg'
 import Events from '../assets/calendar-outline.svg'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useReducer } from 'react'
+import AppReducer, { initialState } from '../reducers/AppReducer'
 
 const Menu=({handleMenuClose})=>{
+  const [state, dispatch]=useReducer(AppReducer,initialState)
+
+
+    const handleMenuOpen=()=>{
+        console.log("menu actiion")
+        console.log(state.isMenuOpen)
+    
+        state.isMenuOpen?
+          dispatch({type:"SET_MENU_OPEN",payload:false}):""
+        //   dispatch({type:"SET_MENU_OPEN",payload:true})
+    
+      }
+
+
+
+
+
+
  const MenuArray=[
     {
         image:Timeline,
@@ -43,12 +63,13 @@ const Menu=({handleMenuClose})=>{
  ]
     return(
         <div className='menu-container'>
+            <h3>Menu</h3>
             
             {MenuArray && MenuArray.map((item,index)=>{
              const {image,info,path}=item
              
             return( 
-                <Link  to= {path}  className="menu-item" key={index} onClick={handleMenuClose}>
+                <Link  to= {path}  className="menu-item" key={index} onClick={handleMenuOpen}>
                     <img src={image}  />
                     <span>{info}</span>
                 </Link>

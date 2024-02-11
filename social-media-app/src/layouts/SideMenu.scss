@@ -13,8 +13,9 @@
 
 .dp-username{
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
+    margin-left:1rem;
     
 }
 
@@ -41,7 +42,7 @@
 
 
 }
-@media (max-width:767px) {
+@media (max-width:1024px) {
     .side-container{
         display: none;
     }
