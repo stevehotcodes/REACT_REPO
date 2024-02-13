@@ -1,42 +1,53 @@
-import React from 'react'
-import '../Header/Header.scss'
+import React from 'react';
+import {NavLink, Link} from 'react-router-dom';
+import '../Header/Header.scss';
 
 const Header = () => {
+  const NavArray = [
+    {
+      info: 'Home',
+      path: '/home'
+    },
+    {
+      info: 'Contacts',
+      path: '/contacts'
+    },
+    {
+      info: 'About',
+      path: '/about'
+    },
+    {
+      info: 'Blog',
+      path: '/blog'
+    },
+    {
+      info: 'Skills',
+      path: '/skills'
+    }
+  ];
+
   return (
-    <div className='header-container'>
-        <div className="logo">
-             <span>PORT</span>
-             <span>FOLIO</span>
-        </div>
-      
-         <div className='nav-links'>
-              
-            <NavLink className='links'>
-                   Home
-            </NavLink>
-            <NavLink className='links'>
-                    About 
-            </NavLink>
-            <NavLink className='links'>
-                    Services
-            </NavLink>
-            <NavLink className='links'>
-                    Blog
-            </NavLink>
-            <NavLink className='links'>
-                    Contact
-            </NavLink>
+    <nav className='header-container'>
+      <div className="logo">
+        <span>PORT</span>
+        <span>FOLIO</span>
+      </div>
+       <div class="nav-links">
+                {NavArray.map((item, index) => (
+                        <Link to={item.path} className='nav-link' activeClassName='active' key={index}>
+                        <span>{item.info}</span>
+                        {/* <span>heeh</span> */}
+                        </Link>
+                ))}
+       </div>
+     
 
-         </div>
-        <div className='download-cv'>
-        <NavLink>
-          Downmload CV
-         </NavLink>
-        </div>
-       
-        
-    </div>
-  )
-}
 
-export default Header
+
+
+     <div className='download-cv'><span>Download CV</span></div>
+    </nav>
+  );
+};
+
+export default Header;
