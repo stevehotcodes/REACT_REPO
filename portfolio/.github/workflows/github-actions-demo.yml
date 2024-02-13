@@ -1,6 +1,4 @@
-<<<<<<< HEAD
---data
-=======
+
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
@@ -19,4 +17,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
->>>>>>> d760fde5fadbb1e3711035ae3703665388c33623
