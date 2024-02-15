@@ -12,3 +12,19 @@ Content-Type: application/json
 
 ###get all users
 GET http://localhost:3000/api/user
+### get one user
+GET http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
+### update one user
+PATCH http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
+Content-Type: application/json
+
+  {
+
+    "username": "testsk1-user@example.com",
+    "email": "testsk@gmail.com",
+    "tagname": "sk2"
+  
+    
+  }
+###
+DELETE   http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
