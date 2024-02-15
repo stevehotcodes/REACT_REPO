@@ -51,3 +51,14 @@ Content-Type: application/json
 
 ### delete a post
 DELETE  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
+### create a new photo
+POST http://localhost:3000/api/group
+Content-Type: application/json
+
+{
+    "group_name":"first group",
+    "group_description":"description 1"
+}
+
+### get all groups
+GET http://localhost:3000/api/group

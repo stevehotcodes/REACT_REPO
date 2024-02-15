@@ -16,3 +16,7 @@ export const sendCreated = (res, message) => {
 export const sendDeleteSuccess = (res, message) => {
     return res.status(200).json({ message: message });
 }
+
+export const sendSuccess = (res, message) => {
+    return res.status(200).json({ message: message });
+}
