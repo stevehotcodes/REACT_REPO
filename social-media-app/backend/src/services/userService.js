@@ -18,3 +18,15 @@ export const addUserService=async(user)=>{
             return error
         }
 }
+
+export const getAllUserService=async()=>{
+    try {
+         const result= await poolRequest()
+        .query(`SELECT * FROM tbl_user`)
+        return result
+
+    } catch (error) {
+        return error
+        
+    }
+}

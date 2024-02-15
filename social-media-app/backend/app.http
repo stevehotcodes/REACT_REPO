@@ -1,11 +1,14 @@
-###
-POST http://localhost:5000/api/user
+### register new user
+POST http://localhost:3000/api/user
 Content-Type: application/json
 
 {
    
-    "username":"test-user@example.com",
-    "email":"test@gmail.com",
-    "tagname":"testtagname",
+    "username":"testsk-user@example.com",
+    "email":"testsk@gmail.com",
+    "tagname":"sk",
     "password":"12345678"
 }
+
+###get all users
+GET http://localhost:3000/api/user

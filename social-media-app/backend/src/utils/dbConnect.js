@@ -11,7 +11,7 @@ const sqlConfig = {
     password:SQL_PASSWORD ,
     server: SQL_SERVER,
     database:SQL_DB ,
-    port: Number(SQL_SERVER_PORT),    
+    // port: Number(SQL_SERVER_PORT),    
     options: {
         encrypt:Boolean(SQL_ENCRYPT) , // true for azure & false for local dev,
         trustServerCertificate:Boolean(SQL_TRUST_SERVER_CERTIFICATE) , // true for local dev & false for azure
