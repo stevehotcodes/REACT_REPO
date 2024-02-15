@@ -26,5 +26,28 @@ Content-Type: application/json
   
     
   }
-###
+### delete user
 DELETE   http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
+
+### create post
+POST http://localhost:3000/api/post
+Content-Type: application/json
+
+{
+  "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
+  "content":"This is my first post"
+}
+### get all posts
+GET  http://localhost:3000/api/post   
+### get one post
+GET http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
+### update a post
+PATCH  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
+Content-Type: application/json
+
+{
+  "content":"This is an updated post"
+}
+
+### delete a post
+DELETE  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c

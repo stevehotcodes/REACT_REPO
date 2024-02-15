@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import userRouter from './src/routes/users.route.js'
 import bodyParser from 'body-parser'
 import logger from './src/utils/logger.js'
+import postRouter from './src/routes/postroutes.js'
 dotenv.config()
 
 
@@ -19,7 +20,9 @@ app.get('/health',(req,res)=>{
 })
 
 
-app.use('/api',userRouter)
+app.use('/api',userRouter);
+app.use('/api',postRouter);
+
 
 
 
