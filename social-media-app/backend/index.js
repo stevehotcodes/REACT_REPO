@@ -5,6 +5,10 @@ import bodyParser from 'body-parser'
 import logger from './src/utils/logger.js'
 import postRouter from './src/routes/postroutes.js'
 import groupRouter from './src/routes/groupsroutes.js'
+import eventRouter from './src/routes/eventRoutes.js'
+import messageRouter from './src/routes/messagesRoute.js'
+import groupMemberRouter from './src/routes/groupMembersRoutes.js'
+import commentRouter from './src/routes/commentRoutes.js'
 dotenv.config()
 
 
@@ -23,8 +27,11 @@ app.get('/health',(req,res)=>{
 
 app.use('/api',userRouter);
 app.use('/api',postRouter);
-app.use('/api',groupRouter)
-
+app.use('/api',groupRouter);
+app.use('/event',eventRouter);
+app.use('/message',messageRouter);
+app.use('/group-members',groupMemberRouter);
+app.use('/comment',commentRouter)
 
 
 

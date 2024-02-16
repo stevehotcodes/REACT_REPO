@@ -56,9 +56,73 @@ POST http://localhost:3000/api/group
 Content-Type: application/json
 
 {
-    "group_name":"first group",
-    "group_description":"description 1"
+    
+    
 }
 
 ### get all groups
 GET http://localhost:3000/api/group
+### get a group by id
+GET http://localhost:3000/api/group/1a4a6b33-494a-42fe-a8b5-67aa11fd618c
+### create event
+POST http://localhost:3000/api/event
+Content-Type: application/json
+
+{
+  "event_name":"Sambaland",
+  "event_description":"My first event",
+  "location":"Nairobi"
+}
+
+### get all events
+GET  http://localhost:3000/event
+
+### get an evenet by id
+GET  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c6
+
+### update an event 
+PUT  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c
+Content-Type: application/json
+
+{
+     "event_name":"Sambaland",
+  "event_description":"My first event",
+  "location":"Nairobi, Kenya"  
+}
+### new message
+
+POST http://localhost:3000/message/new
+Content-Type: application/json
+
+{      "content":"Hello",
+       "sender_id":"295bcb46-7476-4338-896d-6208a3b9601e",
+        "receiver_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
+}
+
+###  get messages from a sender
+GET http://localhost:3000/message/295bcb46-7476-4338-896d-6208a3b9601e
+### delete messages from a receiver
+DELETE http://localhost:3000/message/295bcb46-7476-4338-896d-6208a3b9601e
+### fetch all members of a group
+GET http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
+### addd a member to a group
+POST http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
+Content-Type:application/json
+
+{
+    "member_id":"295bcb46-7476-4338-896d-6208a3b9601e"
+}
+
+### add comment
+POST http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
+Content-Type: application/json
+
+{
+    
+             "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
+             "content":"nice pic "
+
+          
+}
+### get comment
+GET http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
