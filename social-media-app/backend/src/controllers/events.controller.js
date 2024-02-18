@@ -1,11 +1,9 @@
-import { createEventService, getAllEventsService, getOneEventService, updateEventDetailsService } from "../services/eventService.js";
-import { sendBadRequest, sendCreated, sendNotFound, sendServerError, sendSuccess } from "../helpers/helper.function.js";
+import { createEventService, deleteAnEventService, getAllEventAttendeesService, getAllEventsService, getOneEventFromAttendeeTable, getOneEventService, registerEventService, updateEventDetailsService } from "../services/eventService.js";
+import { sendBadRequest, sendCreated, sendDeleteSuccess, sendNotFound, sendServerError, sendSuccess } from "../helpers/helper.function.js";
 import { eventValidator } from "../validators/event.validators.js";
 import logger from "../utils/logger.js";
-
-
-
-
+import { getOneUser } from "./users.controllers.js";
+import { getOneUserService } from "../services/userService.js";
 
 
 export const createEvent=async(req,res)=>{
@@ -34,6 +32,7 @@ export const createEvent=async(req,res)=>{
     }
 }
 
+
 export const getAllEvents=async(req,res)=>{
     try {
          const events=await getAllEventsService()
@@ -48,6 +47,7 @@ export const getAllEvents=async(req,res)=>{
         sendServerError(res,error)
     }
 }
+
 
 export const getOneEvent=async(req,res)=>{
     try {
@@ -66,32 +66,141 @@ export const getOneEvent=async(req,res)=>{
 }
 
 
-
-export const updateEventDetails=async(res,req)=>{
+export const updateEventDetails = async (req, res) => {
     try {
-          const {id}=req.params
-          logger.error(id)
-        //   const event={
-        //     event_name:req.body.event_name,
-        //     event_description:req.body.event_description,
-        //     location:req.body.event_description
-        // }
+        const id = req.params.event_id;
+        logger.info(id);
+        
+        // Check if the event exists
+        const event = await getOneEventService(id);
+  
 
-        // if(req.body.event_name!=="" && req.body.event_description!==""){
-        //     const result=await updateEventDetailsService(id,event)
-        //     console.log(result)
-        //     if(result.rowsAffected[0]==1){
-        //           sendCreated(res,"event details updated successfully ")
-        //     }
+        if (event.length==0) {
+            sendNotFound(res, "Event does not exist");
+        } else {
+            const {
+                event_id,
+                event_name,
+                event_description,
+                event_date,
+                location,
+                event_poster_url
+            } = event[0];
+
+
+            const eventDetails = {
+                event_id:event_id,
+                event_name: req.body.event_name || event_name,
+                event_description: req.body.event_description || event_description,
+                location: req.body.location || location,
+                event_date: req.body.event_date || event_date,
+                event_poster_url: req.body.event_poster_url || event_poster_url
+            };
+
             
-        //  }
-        //  else{
-        //      console.log("body cannot be empty")
-        //  }
+              
+            console.log("event details object",eventDetails)
 
-           
+            const result = await updateEventDetailsService(id, eventDetails);
+            logger.info(result);
+
+            if (result.rowsAffected > 0) {
+                sendCreated(res, "Event details updated successfully");
+            } else {
+                sendBadRequest(res, "Failed to update event details");
+            }
+        }
     } catch (error) {
-        logger.info(error);
-        // sendServerError(res,error)
+        logger.error(error);
+        sendServerError(res, error.message);
+    }
+};
+
+export const deleteAnEvent=async(req,res)=>{
+    try {
+        const event_id=req.params.event_id;
+        //check if the event exists
+
+        const event=await getOneEventService(event_id);
+        if(event.length==0){
+            sendNotFound(res,"Event does not exist")
+        }
+        else{
+            const response =await deleteAnEventService(event_id)
+            logger.info(response)
+
+            if(response.rowsAffected>0){
+                sendDeleteSuccess(res,"event deleted succesfully")
+            }
+            else{
+                sendBadRequest(res,"Deleting operation unsuccessful please try again")
+            }
+        }
+        
+    } catch (error) {
+        sendServerError(res,error.message)
+    }
+}
+
+export const addEventAttendee=async(req,res)=>{
+    try {
+         const event_id=req.params.event_id;
+         console.log(event_id)
+         const attendee_id=req.body.attendee_id
+         
+
+         const event=await getOneEventService(event_id)
+         logger.info("event info",event)
+         const attendee=await getOneUserService(attendee_id)
+
+         if(event.length==0){
+            logger.info(event)
+            sendNotFound(res,"Event does not exist");
+            
+         }
+         else{
+            if(attendee.length==0){
+                const result =await registerEventService({event_id,attendee_id});
+                logger.info(result)
+                sendSuccess(res,"You registered for the event")
+            }
+            else{
+                sendBadRequest(res, "You already registered for the event")
+            }
+         }       
+        
+    } catch (error) {
+        sendServerError(res,error)
+    }
+}
+
+
+export const getAllEventAttendees=async(req,res)=>{
+    try {
+
+        const event_id=req.params.event_id
+        console.log(event_id)
+        const event=await getOneEventFromAttendeeTable(event_id);
+        logger.info(event)
+        if(event.length==0){
+            sendNotFound(res,"event does not exists");
+        }
+        else{
+             const result=await getAllEventAttendeesService(event_id)
+             logger.info(result)
+             if(result.length==0){
+                sendNotFound(res,"no attendees found")
+              
+                 
+             }
+             else{
+                return res.status(200).json(result)
+             }
+        }
+         
+
+    } catch (error) {
+        sendServerError(res,error)
+        
     }
 }

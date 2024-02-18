@@ -32,15 +32,34 @@ export const getCommentOfAPostService=async(post_id)=>{
          const result =await poolRequest()
          .input("post_id",sql.VarChar,post_id)
          .query(`
-            SELECT *
+            SELECT comment.*,post.post_date,post.content AS post_content,tbl_user.tagname AS user_who_commented
             FROM comment
-            WHERE post_id=@post_id
+            INNER JOIN tbl_user ON tbl_user.user_id=comment.user_id
+            INNER JOIN post ON post.post_id=comment.post_id
+            WHERE comment.post_id=@post_id
          
          
          `)
          return result.recordset
 
     } catch (error) {
+        return error.originalError.info.message
+    }
+}
+
+export const deleteCommentPostService=async(comment_id)=>{
+    try {
+        const result =await poolRequest()
+        .input("comment_id",sql.VarChar, comment_id)
+        .query(`
+                   DELETE FROM comment WHERE comment_id=@comment_id
+        `)
+
+        return result
+         
+        
+    } catch (error) {
         return error
     }
 }
+

@@ -1,7 +1,7 @@
-import { addUserService, deleteUserService, getAllUserService, getOneUserService, updateUserDetailsService } from "../services/userService.js"
+import { addUserService, deleteUserService, findByCredentialsService, getAllUserService, getOneUserService, updateUserDetailsService } from "../services/userService.js"
 import * as uuid from 'uuid'
 import logger from "../utils/logger.js"
-import { userUpdateValidator, userValidator } from "../validators/user.validators.js"
+import { userLoginValidator, userUpdateValidator, userValidator } from "../validators/user.validators.js"
 import { sendDeleteSuccess, sendNotFound, sendServerError } from "../helpers/helper.function.js"
 
 
@@ -108,3 +108,23 @@ export const deleteUser=async(req,res)=>{
     console.log(error)
    }
 }
+
+export const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+    const { error } = userLoginValidator({ email, password });
+    if (error) {
+        return res.status(400).send(error.details[0].message);
+    } else {
+        try {
+            const userResponse = await findByCredentialsService({ email, password });
+            if (userResponse.error) {
+                // notAuthorized(res, userResponse.error);
+                return res.status(400).json(userResponse.error)
+            } else {
+                res.status(200).send(userResponse);
+            }
+        } catch (error) {
+            sendServerError(res, error.message)
+        }
+    }
+};

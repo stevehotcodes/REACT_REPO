@@ -1,5 +1,5 @@
-import { sendBadRequest, sendCreated, sendNotFound, sendServerError, sendSuccess } from "../helpers/helper.function.js";
-import { createGroupService, getAllGroupsService, getOnegroupService, updateGroupDetailsService } from "../services/groupService.js";
+import { sendBadRequest, sendCreated, sendDeleteSuccess, sendNotFound, sendServerError, sendSuccess } from "../helpers/helper.function.js";
+import { createGroupService, deleteGroupService, getAllGroupsService, getGroupByNameService, getOnegroupService, updateGroupDetailsService } from "../services/groupService.js";
 import logger from "../utils/logger.js";
 import { groupValidator } from "../validators/group.validators.js";
 
@@ -9,26 +9,36 @@ import { groupValidator } from "../validators/group.validators.js";
 
 export const createGroup=async(req,res)=>{
     try 
-    {
-        const group={
-            group_name:req.body.group_name,
-            group_description:req.body.group_description
-
+    {    
+        //check if a group exists with that name
+        const groupFromDB=await getGroupByNameService(req.body.group_name)
+        console.log("group from the db",groupFromDB)
+        if(groupFromDB.length>0){
+            sendBadRequest(res,"The group already exists")
         }
+        else {
+            const group={
+                group_name:req.body.group_name,
+                group_description:req.body.group_description
+    
+            }      
+               
+             const{err}=groupValidator(group)
+               if(err){
+                return sendBadRequest(res,err.details[0].message)
+               }
+               else{
+                const result=await createGroupService(group)
+                sendSuccess(res,"group created successfully")
 
-        
-           
-                const{error}=groupValidator(group)
-           if(error){
-            return sendBadRequest(res,error.details[0].message)
-           }
-           const result=await createGroupService(group)
-            sendSuccess(res,"group created successfully")
-       
+               }
+              
+        }
+              
 
     } 
     catch (error) {
-        sendServerError(res,error)
+        sendServerError(res,"error in creating group")
         
     }
 }
@@ -68,19 +78,27 @@ export const getOneGroup =async(req,res)=>{
     }
 }
 
-export const updateGroupDetails=async(res,req)=>{
+export const updateGroupDetails=async(req,res)=>{
     try {
-          const group_id=req.body.group_id
-          const group={
+          const group_id=req.params.group_id
+          const group=await getOnegroupService(group_id);
+          if(group.length==0){
+            sendNotFound(res,"group does not exist")
+          }
+          else{
+            
+          const groupDetails={
             group_name:req.body.group_name,
             group_description:req.body.group_description
 
-        }
+         }
 
-        if(req.body.group_name!=="" && req.body.group_description!==""){
-            const result=await updateGroupDetailsService(group_id,group)
+        // console.log("check req body value",(req.body.group_name!==null && req.body.group_description!==null))
+
+        if(req.body.group_name!==null && req.body.group_description!==null){
+            const result=await updateGroupDetailsService(group_id,groupDetails)
             console.log(result)
-            if(result.rowsAffected[0]==1){
+            if(result.rowsAffected>0){
                   sendCreated(res,"group details updated successfully ")
             }
             
@@ -88,11 +106,32 @@ export const updateGroupDetails=async(res,req)=>{
          else{
              console.log("body cannot be empty")
          }
+          }
+
 
            
     } catch (error) {
         logger.info(error);
         sendServerError(res,error)
         
+    }
+}
+
+export const deleteGroup=async(req,res)=>{
+    try {
+        const group_id=req.params.group_id
+        const group=await getOnegroupService(group_id);
+        if(group.length==0){
+            sendNotFound(res,"group does not exist")
+          }
+          else{
+             const response=await deleteGroupService(group_id);
+             logger.info(response);
+             sendDeleteSuccess(res,'group delete succesfully')
+             
+          }
+        
+    } catch (error) {
+       sendServerError(res,error)  
     }
 }

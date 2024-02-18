@@ -45,7 +45,7 @@ export const getOnegroupService=async(group_id)=>{
         const result =await poolRequest()
         .input('group_id',sql.VarChar,group_id)
         .query(`SELECT * FROM tbl_group WHERE group_id=@group_id`)
-        return result.recordset[0]
+        return result.recordset
         
     } catch (error) {
         return error
@@ -66,7 +66,6 @@ export const updateGroupDetailsService=async(group_id,groupDetails)=>{
                     UPDATE tbl_group
                     SET group_name=@group_name, group_description=@group_description
                     WHERE group_id=@group_id
-            
             `);
 
             return result
@@ -75,5 +74,32 @@ export const updateGroupDetailsService=async(group_id,groupDetails)=>{
         
     } catch (error) {
         return error   
+    }
+}
+
+export const getGroupByNameService=async(group_name)=>{
+    try {
+        
+        const result =await poolRequest()
+        .input('group_name',sql.VarChar,group_name)
+        .query(`SELECT * FROM tbl_group WHERE group_name=@group_name`)
+        return result.recordset
+        
+    } catch (error) {
+        return error
+        
+    }
+}
+
+
+export const deleteGroupService=async(group_id)=>{
+    try {
+        const result =await poolRequest()
+        .input('group_id',sql.VarChar,group_id)
+        .query(`DELETE FROM tbl_group WHERE group_id=@group_id`)
+        return result
+        
+    } catch (error) {
+        return error
     }
 }

@@ -5,9 +5,18 @@ Content-Type: application/json
 {
    
     "username":"testsk-user@example.com",
-    "email":"testsk@gmail.com",
-    "tagname":"sk",
+    "email":"ondiekistephen00@gmail.com",
+    "tagname":"s0o",
     "password":"12345678"
+}
+
+### login
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+   "email":"ondiekistephen00@gmail.com",
+   "password":"12345678"
 }
 
 ###get all users
@@ -55,7 +64,8 @@ DELETE  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
 POST http://localhost:3000/api/group
 Content-Type: application/json
 
-{
+{   "group_name":"Wakadinali3 group",
+     "group_description":"description"
     
     
 }
@@ -64,6 +74,20 @@ Content-Type: application/json
 GET http://localhost:3000/api/group
 ### get a group by id
 GET http://localhost:3000/api/group/1a4a6b33-494a-42fe-a8b5-67aa11fd618c
+### update group details
+
+PATCH  http://localhost:3000/api/group/00c0d988-2535-4908-80b5-da9a436cbdd0
+Content-Type: application/json
+
+{   "group_name":"uPDATED  group",
+     "group_description":"description UPDATED"
+    
+    
+}
+### delete a group
+DELETE  http://localhost:3000/api/group/00c0d988-2535-4908-80b5-da9a436cbdd0
+
+
 ### create event
 POST http://localhost:3000/api/event
 Content-Type: application/json
@@ -78,17 +102,34 @@ Content-Type: application/json
 GET  http://localhost:3000/event
 
 ### get an evenet by id
-GET  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c6
+GET  http://localhost:3000/event/ba353081-eb57-4af6-bfca-938525a6c592
 
-### update an event 
-PUT  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c
+### update an event
+PUT  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c6
 Content-Type: application/json
 
 {
-     "event_name":"Sambaland",
-  "event_description":"My first event",
-  "location":"Nairobi, Kenya"  
+    "event_name": "updated event name",
+    "event_description": "updated event description",
+    "location": "Nairobi, Kenya, Africa",
+    "event_date": "2024/12/02",
+    "event_poster_url": "poster image updated"
 }
+
+###delete the event
+DELETE http://localhost:3000/event/0c3d94d3-00ed-49cc-907c-753bce79b28a
+
+### register user for an event
+POST http://localhost:3000/event/register/ba353081-eb57-4af6-bfca-938525a6c592
+Content-Type:application/json
+
+{
+  "attendee_id":"00811ba5-86be-46ca-b5ca-1c85d8fc1a75"
+}
+
+### get all event attendees
+GET http://localhost:3000/event/attendees/ba353081-eb57-4af6-bfca-938525a6c592
+
 ### new message
 
 POST http://localhost:3000/message/new
@@ -110,7 +151,18 @@ POST http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json
 
 {
-    "member_id":"295bcb46-7476-4338-896d-6208a3b9601e"
+
+  "member_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
+
+}
+### remove a member from a group
+DELETE http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
+Content-Type:application/json
+
+{
+
+  "member_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
+
 }
 
 ### add comment
@@ -119,10 +171,12 @@ Content-Type: application/json
 
 {
     
-             "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
-             "content":"nice pic "
-
+  "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
+  "content":"nice pic "
           
 }
-### get comment
+
+### get comment of a post
 GET http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
+### delete comment
+DELETE http://localhost:3000/comment/07cf18db-0a1a-4ea5-b375-7868c2f60e1d
