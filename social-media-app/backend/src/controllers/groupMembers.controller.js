@@ -20,7 +20,7 @@ export const getGroupMembersofAGroup=async(req,res)=>{
 export const addGroupMembertoAGroup=async(req,res)=>{
     try {
         const group_id=req.params.group_id
-        const member_id=req.body.member_id
+        const member_id=req.user.user_id
 
         const members=await getGroupMemebrByIdService(member_id)
 

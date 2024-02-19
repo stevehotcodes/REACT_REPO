@@ -7,7 +7,7 @@ import { sendDeleteSuccess, sendNotFound, sendServerError } from "../helpers/hel
 
 
 export const registerUser=async (req,res)=>{
-     console.log("hello")
+    //  console.log("hello")
       try {
         // const id =uuid.v4()
           const newUser={

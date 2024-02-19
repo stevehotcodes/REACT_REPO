@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
    
-    "username":"testsk-user@example.com",
-    "email":"ondiekistephen00@gmail.com",
-    "tagname":"s0o",
+    "username":"leahNyambura",
+    "email":"leahnyambura682@gmail.com",
+    "tagname":"leahnyambura",
     "password":"12345678"
 }
 
@@ -41,9 +41,10 @@ DELETE   http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
 ### create post
 POST http://localhost:3000/api/post
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
 
 {
-  "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
+  
   "content":"This is my first post"
 }
 ### get all posts
@@ -121,10 +122,8 @@ DELETE http://localhost:3000/event/0c3d94d3-00ed-49cc-907c-753bce79b28a
 ### register user for an event
 POST http://localhost:3000/event/attendees/c920d782-a40f-46b9-b9ab-72acf28750d3
 Content-Type:application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
 
-{  
-    "attendee_id":"2aa993f6-05d1-441b-91eb-6c475a4d3fe1"
-}
 
 ### get all event attendees
 GET http://localhost:3000/event/attendees/ba353081-eb57-4af6-bfca-938525a6c592
@@ -133,10 +132,10 @@ GET http://localhost:3000/event/attendees/ba353081-eb57-4af6-bfca-938525a6c592
 
 POST http://localhost:3000/message/new
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
 
 {      "content":"Hello",
-       "sender_id":"295bcb46-7476-4338-896d-6208a3b9601e",
-        "receiver_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
+       "receiver_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
 }
 
 ###  get messages from a sender
@@ -148,12 +147,7 @@ GET http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 ### addd a member to a group
 POST http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json
-
-{
-
-  "member_id":"2b075075-396b-492f-90c7-50aa1668ba3b"
-
-}
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
 ### remove a member from a group
 DELETE http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json
@@ -167,11 +161,12 @@ Content-Type:application/json
 ### add comment
 POST http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
 
 {
     
-  "user_id":"295bcb46-7476-4338-896d-6208a3b9601e",
-  "content":"nice pic "
+  
+  "content":"nice pic, This is steve's comment "
           
 }
 

@@ -5,7 +5,8 @@ username VARCHAR(300) DEFAULT 'no username',
 email VARCHAR(300) DEFAULT 'no email',
 tagname VARCHAR(300) DEFAULT 'no tagname',
 password VARCHAR(300) DEFAULT 'no password',
-location VARCHAR(300) DEFAULT 'no location'
+location VARCHAR(300) DEFAULT 'no location',
+isEMailSent INT DEFAULT 0
 );
 
 ---create a post table

@@ -10,6 +10,8 @@ import messageRouter from './src/routes/messagesRoute.js'
 import groupMemberRouter from './src/routes/groupMembersRoutes.js'
 import commentRouter from './src/routes/commentRoutes.js'
 import friendshipRouter from './src/routes/friendshipRoute.js'
+import cron from 'node-cron'
+import { sendWelcomeEmailToNewUsers } from './src/config/mailConfig.js'
 dotenv.config()
 
 
@@ -36,6 +38,12 @@ app.use('/comment',commentRouter);
 app.use('/friendship',friendshipRouter)
 
 
+// schedule sending email
+cron.schedule('*/5 * * * * *', () => {
+    logger.info("sending email after every five seconds ...............")
+    sendWelcomeEmailToNewUsers()
+    
+});
 
 
 app.listen(port, ()=>{

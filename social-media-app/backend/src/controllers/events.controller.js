@@ -146,7 +146,7 @@ export const addEventAttendee=async(req,res)=>{
     try {
          const event_id=req.params.event_id;
          console.log(event_id)
-         const attendee_id=req.body.attendee_id
+         const attendee_id=req.user.user_id
 
          const eventDetails={
             event_id:event_id,

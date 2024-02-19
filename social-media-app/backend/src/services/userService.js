@@ -17,8 +17,11 @@ export const addUserService=async(user)=>{
              .input('email',sql.VarChar,user.email)
              .input('tagname',sql.VarChar,user.tagname)
              .input('password',sql.VarChar,hashPassword)
+             .input('isEmailSent',sql.Int,0)
              .query(`INSERT INTO tbl_user(user_id,username,email,tagname,password)
                     VALUES(@user_id,@username,@email,@tagname,@password)
+                                        
+                     
                     `)
                
              return result
@@ -130,4 +133,15 @@ export const findByCredentialsService = async (user) => {
         return error;
     }
 
+}
+
+export const getNewRegisterUsersService=async()=>{
+    try {
+        const result=await poolRequest()
+        .query(`SELECT  email FROM tbl_user WHERE  isEMailSent=0`);
+        return result.recordset
+        
+    } catch (error) {
+        return error
+    }
 }

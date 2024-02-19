@@ -17,7 +17,7 @@ export const addComment=async(req,res)=>{
           }
           else{
             const comment={
-                user_id:req.body.user_id,
+                user_id:req.user.user_id ,
                 content:req.body.content
                    
               }

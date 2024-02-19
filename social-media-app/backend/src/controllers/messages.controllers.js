@@ -9,7 +9,7 @@ export const createMessage=async(req,res)=>{
     try {
         const message={
             content:req.body.content,
-            sender_id:req.body.sender_id,
+            sender_id:req.user.user_id,
             receiver_id:req.body.receiver_id
 
         }

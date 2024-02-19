@@ -8,7 +8,8 @@ import { followOtherUser, getAllFollowers } from "../controllers/friendship.cont
 const friendshipRouter=Router()
 
 friendshipRouter.post('/:following_id',authMiddleware,followOtherUser)
-friendshipRouter.get('/',authMiddleware,getAllFollowers)
+friendshipRouter.get('/',authMiddleware,getAllFollowers);
+
 
 
 
