@@ -46,6 +46,7 @@ export const registerUser=async (req,res)=>{
 
 export const getAllUsers=async(req,res)=>{
     try {
+          
 
         let data =await getAllUserService();
         if(!data.recordset){
@@ -81,7 +82,8 @@ export const getOneUser=async(req, res)=>{
 
 export const updateUserDetails=async(req,res)=>{
    try {
-         let user_id=req.params.user_id
+         let user_id=req.params.user_id;
+        
          const user={
             
           username:req.body.username,

@@ -89,3 +89,4 @@ export const deleteAPost=async(req,res)=>{
         sendServerError(res, error)   
     }
 }
+

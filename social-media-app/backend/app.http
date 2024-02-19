@@ -21,11 +21,15 @@ Content-Type: application/json
 
 ###get all users
 GET http://localhost:3000/api/user
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
+
 ### get one user
 GET http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### update one user
 PATCH http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
   {
 
@@ -37,6 +41,7 @@ Content-Type: application/json
   }
 ### delete user
 DELETE   http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 ### create post
 POST http://localhost:3000/api/post
@@ -50,11 +55,14 @@ Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZ
 }
 ### get all posts
 GET  http://localhost:3000/api/post   
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### get one post
 GET http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### update a post
 PATCH  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 {
   "content":"This is an updated post"
@@ -62,9 +70,11 @@ Content-Type: application/json
 
 ### delete a post
 DELETE  http://localhost:3000/api/post/b1e80e56-1347-416d-8f2e-5cd06ca3ab0c
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### create a new photo
 POST http://localhost:3000/api/group
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 {   "group_name":"Wakadinali3 group",
      "group_description":"description"
@@ -74,25 +84,31 @@ Content-Type: application/json
 
 ### get all groups
 GET http://localhost:3000/api/group
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### get a group by id
 GET http://localhost:3000/api/group/1a4a6b33-494a-42fe-a8b5-67aa11fd618c
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### update group details
 
 PATCH  http://localhost:3000/api/group/00c0d988-2535-4908-80b5-da9a436cbdd0
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
-{   "group_name":"uPDATED  group",
+{   
+    "group_name":"uPDATED  group",
      "group_description":"description UPDATED"
     
     
 }
 ### delete a group
 DELETE  http://localhost:3000/api/group/00c0d988-2535-4908-80b5-da9a436cbdd0
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 
 ### create event
-POST http://localhost:3000/api/event
+POST http://localhost:3000/event
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 {
   "event_name":"Sambaland",
@@ -102,13 +118,15 @@ Content-Type: application/json
 
 ### get all events
 GET  http://localhost:3000/event
-
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### get an evenet by id
 GET  http://localhost:3000/event/ba353081-eb57-4af6-bfca-938525a6c592
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 ### update an event
 PUT  http://localhost:3000/event/64f8913e-8bfa-4f4b-966b-710ca14901c6
 Content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 {
     "event_name": "updated event name",
@@ -120,6 +138,7 @@ Content-Type: application/json
 
 ###delete the event
 DELETE http://localhost:3000/event/0c3d94d3-00ed-49cc-907c-753bce79b28a
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### register user for an event
 POST http://localhost:3000/event/attendees/c920d782-a40f-46b9-b9ab-72acf28750d3
 Content-Type:application/json
@@ -128,6 +147,7 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkz
 
 ### get all event attendees
 GET http://localhost:3000/event/attendees/ba353081-eb57-4af6-bfca-938525a6c592
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 
 ### new message
 
@@ -141,10 +161,13 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkz
 
 ###  get messages from a sender
 GET http://localhost:3000/message/295bcb46-7476-4338-896d-6208a3b9601e
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### delete messages from a receiver
 DELETE http://localhost:3000/message/295bcb46-7476-4338-896d-6208a3b9601e
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### fetch all members of a group
 GET http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### addd a member to a group
 POST http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json
@@ -173,8 +196,10 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkz
 
 ### get comment of a post
 GET http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### delete comment
 DELETE http://localhost:3000/comment/07cf18db-0a1a-4ea5-b375-7868c2f60e1d
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzNTA0NDgsImV4cCI6MTcwODM1NzY0OH0.ivlFoMRsv00UKxxEgqTvWvIcFv2AAkg5VZLtBuGnPQc
 ### follow other user
 POST http://localhost:3000/friendship/00811ba5-86be-46ca-b5ca-1c85d8fc1a75
 Content-Type: application/json

@@ -35,17 +35,20 @@ app.use('/event',eventRouter);
 app.use('/message',messageRouter);
 app.use('/group-members',groupMemberRouter);
 app.use('/comment',commentRouter);
-app.use('/friendship',friendshipRouter)
+app.use('/friendship',friendshipRouter);
 
 
 // schedule sending email
 cron.schedule('*/5 * * * * *', () => {
-    logger.info("sending email after every five seconds ...............")
+
+    logger.info("sending email after every five seconds ...............");
     sendWelcomeEmailToNewUsers()
-    
+
 });
 
 
 app.listen(port, ()=>{
     logger.info(`The server is running on http://localhost:${port}`);
 })
+
+

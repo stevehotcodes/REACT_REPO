@@ -3,8 +3,6 @@ import { createMessageService,  deleteOneMessageServiceByReceiver, readAllMessag
 
 
 
-
-
 export const createMessage=async(req,res)=>{
     try {
         const message={
@@ -13,8 +11,6 @@ export const createMessage=async(req,res)=>{
             receiver_id:req.body.receiver_id
 
         }
-
-
         const response= await createMessageService(message);
         console.log(response)
         return sendSuccess(res,"message sent")
@@ -26,7 +22,8 @@ export const createMessage=async(req,res)=>{
 
 export const readAllMessageBySender=async(req,res)=>{
     try {
-         const sender_id=req.params.sender_id
+         
+        const sender_id=req.user.sender_id
        
         const response= await readAllMessageServiceBySender(sender_id);
         console.log(response)
@@ -54,5 +51,5 @@ export const deleteOneMessageByReceiver=async(req,res)=>{
     }
 }
 
-
+//delete all messages from a receiver
 

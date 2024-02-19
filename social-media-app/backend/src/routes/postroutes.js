@@ -1,17 +1,17 @@
 import {Router }from 'express'
 import { createPost, deleteAPost, getAllPosts, getOnePost, updateAPost } from '../controllers/posts.controllers.js'
-import { authMiddleware } from '../middlewares/userAuthMiddleware.js'
+import { verifyUserIdentity } from '../middlewares/userAuthMiddleware.js'
 
 
 
 
 const postRouter=Router()
 
-postRouter.post('/post',authMiddleware,createPost)
-postRouter.get('/post',getAllPosts)
-postRouter.get('/post/:post_id',getOnePost)
-postRouter.patch('/post/:post_id',updateAPost)
-postRouter.delete('/post/:post_id',deleteAPost)
+postRouter.post('/post',verifyUserIdentity,createPost)
+postRouter.get('/post',verifyUserIdentity,getAllPosts)
+postRouter.get('/post/:post_id',verifyUserIdentity,getOnePost)
+postRouter.patch('/post/:post_id',verifyUserIdentity,updateAPost)
+postRouter.delete('/post/:post_id',verifyUserIdentity,deleteAPost)
 
 
 

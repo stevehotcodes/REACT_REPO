@@ -8,6 +8,7 @@ import { getOneUserService } from "../services/userService.js";
 
 export const createEvent=async(req,res)=>{
     try {
+        const eventFromDbRessponse=await g
         const event={
              event_name:req.body.event_name,
              event_description:req.body.event_description,
