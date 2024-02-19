@@ -51,7 +51,6 @@ export const getGroupMemebrByIdService=async(member_id)=>{
         .query(`
                 SELECT group_member.*, tbl_user.username, tbl_user.tagname, tbl_user.user_id FROM group_member 
                 INNER JOIN tbl_user ON tbl_user.user_id=group_member.member_id
-                
                 WHERE group_member.member_id=@member_id
         `)
 

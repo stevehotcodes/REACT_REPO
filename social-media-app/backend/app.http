@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
    
-    "username":"leahNyambura",
-    "email":"leahnyambura682@gmail.com",
-    "tagname":"leahnyambura",
+    "username":"cn",
+    "email":"cinove6282@tospage.com",
+    "tagname":"isaackilimok2",
     "password":"12345678"
 }
 
@@ -41,11 +41,12 @@ DELETE   http://localhost:3000/api/user/1d2b805f-485c-407b-9b49-7c36cf8b958c
 ### create post
 POST http://localhost:3000/api/post
 Content-Type: application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMzYwMjksImV4cCI6MTcwODM0MzIyOX0.rna4vVh27VDKSMssMS94Fajj-Cx4gXL71tlMjSU6pIg
 
 {
   
-  "content":"This is my first post"
+  "content":"This is my first post",
+  "image":"www.photo.url"
 }
 ### get all posts
 GET  http://localhost:3000/api/post   
@@ -147,7 +148,7 @@ GET http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 ### addd a member to a group
 POST http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMTQyMzUsImV4cCI6MTcwODMyMTQzNX0.hFB-NaQA6LpYpOVXdSFxRjz_iKJldD33RczS1pNkQsk
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMzYwMjksImV4cCI6MTcwODM0MzIyOX0.rna4vVh27VDKSMssMS94Fajj-Cx4gXL71tlMjSU6pIg
 ### remove a member from a group
 DELETE http://localhost:3000/group-members/073e816f-b75c-4ebf-beb4-d8593e676e70
 Content-Type:application/json

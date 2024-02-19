@@ -8,11 +8,14 @@ export const createPost=async (req,res)=>{
     try{
          const newPost={
               user_id:req.user.user_id,
-              content:req.body.content
+              content:req.body.content,
+              image:req.body.image
          }
          
          const response =await createPostService(newPost)
-         if(response.rowsAffected==1){
+        //  console.log(response.result1.rowsAffected,response.result2.rowsAffected)
+
+         if(response.result1.rowsAffected>0&&response.result2.rowsAffected>0){
             sendCreated(res,'post created successfully')
          }
 

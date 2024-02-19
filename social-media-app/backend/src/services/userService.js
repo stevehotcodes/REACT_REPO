@@ -8,8 +8,8 @@ dotenv.config()
 
 export const addUserService=async(user)=>{
         try {
-              const user_id=uuid.v4()
-              const salt = await bcrypt.genSalt(10);
+              const user_id=uuid.v4() //generate the random id 
+              const salt = await bcrypt.genSalt(10); // generate the salt 
               const hashPassword=await bcrypt.hash(user.password,salt)
               const result=await poolRequest()
              .input('user_id', sql.VarChar, user_id)
@@ -140,6 +140,33 @@ export const getNewRegisterUsersService=async()=>{
         const result=await poolRequest()
         .query(`SELECT  email FROM tbl_user WHERE  isEMailSent=0`);
         return result.recordset
+        
+    } catch (error) {
+        return error
+    }
+}
+
+export const getUserByEmailService=async(email)=>{
+    try {
+        const result=await poolRequest()
+        .input(`email`,sql.VarChar,email)
+        .query(`SELECT  email FROM tbl_user WHERE email=@email`);
+        return result.recordset
+        
+    } catch (error) {
+        return error
+    }
+}
+
+export const setStatusofEmailtoSentService=async(email)=>{
+    try {
+        const result=await poolRequest()
+        .input(`email`,sql.VarChar,email)
+        .query(`UPDATE tbl_user
+                SET isEMailSent=1
+                WHERE email=@email
+            `);
+        return result
         
     } catch (error) {
         return error

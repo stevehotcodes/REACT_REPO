@@ -24,6 +24,8 @@ CREATE TABLE photo(
 photo_id VARCHAR(300) PRIMARY KEY,
 user_id VARCHAR(300) FOREIGN KEY REFERENCES tbl_user(user_id),
 photo_url VARCHAR(MAX) DEFAULT 'no photo',
+post_id VARCHAR(300) FOREIGN KEY REFERENCES post(post_id),
+isProfileImage INT DEFAULT 0,
 uploaded_on DATETIME  DEFAULT GETDATE()
 );
 

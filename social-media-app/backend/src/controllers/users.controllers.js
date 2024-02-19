@@ -1,8 +1,8 @@
-import { addUserService, deleteUserService, findByCredentialsService, getAllUserService, getOneUserService, updateUserDetailsService } from "../services/userService.js"
+import { addUserService, deleteUserService, findByCredentialsService, getAllUserService, getOneUserService, getUserByEmailService, updateUserDetailsService } from "../services/userService.js"
 import * as uuid from 'uuid'
 import logger from "../utils/logger.js"
 import { userLoginValidator, userUpdateValidator, userValidator } from "../validators/user.validators.js"
-import { sendDeleteSuccess, sendNotFound, sendServerError } from "../helpers/helper.function.js"
+import { sendBadRequest, sendDeleteSuccess, sendNotFound, sendServerError } from "../helpers/helper.function.js"
 
 
 
@@ -10,26 +10,34 @@ export const registerUser=async (req,res)=>{
     //  console.log("hello")
       try {
         // const id =uuid.v4()
+      const userExists=await getUserByEmailService(req.body.email)
+        if(userExists.length>0){
+             sendBadRequest(res,"an account associated with that email already exists")
+        }
+        else{
           const newUser={
             
-              username:req.body.username,
-              email:req.body.email,
-              tagname:req.body.tagname,
-              password:req.body.password
-          }
+            username:req.body.username,
+            email:req.body.email,
+            tagname:req.body.tagname,
+            password:req.body.password
+        }
 
-          const{error}=userValidator(newUser)
-          if (error) {
-            return res.status(400).send(error.details[0].message);
-           } 
+        const{error}=userValidator(newUser)
+        if (error) {
+          return res.status(400).send(error.details[0].message);
+         } 
 
-          let response=await addUserService(newUser);
-        //   logger.info(response)
+        let response=await addUserService(newUser);
+      //   logger.info(response)
 
-          if (response.rowsAffected){
-            return res.status(201).send({message:"User created successfully"})
-          }
+        if (response.rowsAffected){
+          return res.status(201).send({message:"User created successfully"})
+        }
 
+        }
+
+     
      } catch (error) {
         //  console.log(error)
         sendServerError(res,error)

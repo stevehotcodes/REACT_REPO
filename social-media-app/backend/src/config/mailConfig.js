@@ -3,7 +3,7 @@ import { transporter } from "../middlewares/mailTransporter.js";
 import dotenv from 'dotenv'
 
 
-import { getNewRegisterUsersService } from "../services/userService.js";
+import { getNewRegisterUsersService, setStatusofEmailtoSentService } from "../services/userService.js";
 import logger from "../utils/logger.js";
 dotenv.config()
 
@@ -48,10 +48,11 @@ export const sendWelcomeEmailToNewUsers=async()=>{
         }
         else{
             console.log(newUsers);
-            newUsers.forEach((user)=>{
+            newUsers.forEach(async (user)=>{
                 sendWelcomeMail(user.email)
                 //change teh state of the database of isEmailSent to 1
-                
+                const emailDeliveryStatus= await setStatusofEmailtoSentService(user.email)
+                console.log("email delivery status",emailDeliveryStatus)
             })
         }
 
