@@ -96,14 +96,13 @@ export const deleteAnEventService=async(event_id)=>{
     }
 }
 
-export const registerEventService=async({event_id,attendee_id})=>{
+export const registerEventService=async(eventDetails)=>{
     try {
         const id=uuid.v4()
         const response=await poolRequest()
         .input('id',sql.VarChar,id)
-        .input('event_id',sql.VarChar,event_id)
-        .input('attendee_id',sql.VarChar,attendee_id)
-
+        .input('event_id',sql.VarChar,eventDetails.event_id)
+        .input('attendee_id',sql.VarChar,eventDetails.attendee_id)
         .query(`
                 INSERT INTO event_attendee(id,event_id,attendee_id)
                 VALUES (@id,@event_id,@attendee_id)
@@ -141,9 +140,21 @@ export const getOneEventFromAttendeeTable=async(event_id)=>{
             SELECT * FROM event_attendee
             WHERE event_id=@event_id
          `)
-         return response
+         return response.recordset
     }
     catch(error){
+        return error
+    }
+}
+
+export const deRegisterAnAttendeeService=async(attendee_id)=>{
+    try {
+        const response=await poolRequest()
+        .input('attendee_id',sql.VarChar,attendee_id)
+        .query(`DELETE FROM event_attendee WHERE event_id=@event_id`);
+        return response
+        
+    } catch (error) {
         return error
     }
 }

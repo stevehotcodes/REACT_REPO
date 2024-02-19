@@ -20,3 +20,6 @@ export const sendDeleteSuccess = (res, message) => {
 export const sendSuccess = (res, message) => {
     return res.status(200).json({ message: message });
 }
+export const notAuthorized = (res, message) => {
+    return res.status(401).json({ message: message });
+}

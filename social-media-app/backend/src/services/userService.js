@@ -103,19 +103,21 @@ export const findByCredentialsService = async (user) => {
         const userFoundResponse = await poolRequest()
             .input('email', sql.VarChar, user.email)
             .query('SELECT * FROM tbl_user WHERE email = @email');
+            console.log(userFoundResponse)
         if (userFoundResponse.recordset[0]) {
             //take user password from db and compare it with the password from the request with bcrypt
             if (await bcrypt.compare(user.password, userFoundResponse.recordset[0].password)) {
                 // send user details back without password and with a jwt token
                 let token = jwt.sign(
                     {
-                        id: userFoundResponse.recordset[0].id,
+                        user_id: userFoundResponse.recordset[0].user_id,
                         username: userFoundResponse.recordset[0].username,
                         email: userFoundResponse.recordset[0].email
                     },
                     process.env.JWT_SECRET, { expiresIn: "2h" } // 2hours
                 );
                 const { password, ...user } = userFoundResponse.recordset[0];
+                console.log('user deatails:',user)
                 return { user, token: `JWT ${token}` };
             } else {
                 return { error: 'Invalid Credentials' };

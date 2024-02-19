@@ -9,6 +9,7 @@ import eventRouter from './src/routes/eventRoutes.js'
 import messageRouter from './src/routes/messagesRoute.js'
 import groupMemberRouter from './src/routes/groupMembersRoutes.js'
 import commentRouter from './src/routes/commentRoutes.js'
+import friendshipRouter from './src/routes/friendshipRoute.js'
 dotenv.config()
 
 
@@ -31,7 +32,8 @@ app.use('/api',groupRouter);
 app.use('/event',eventRouter);
 app.use('/message',messageRouter);
 app.use('/group-members',groupMemberRouter);
-app.use('/comment',commentRouter)
+app.use('/comment',commentRouter);
+app.use('/friendship',friendshipRouter)
 
 
 

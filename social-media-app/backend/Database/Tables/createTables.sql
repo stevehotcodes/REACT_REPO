@@ -36,12 +36,15 @@ content VARCHAR(MAX) DEFAULT 'no comment',
 );
 
 --create a friendship table 
-CREATE TABLE friendship(
-friendship_id VARCHAR(300) PRIMARY KEY,
-user1_id VARCHAR(300) FOREIGN KEY REFERENCES tbl_user(user_id),
-user2_id VARCHAR(300) FOREIGN KEY REFERENCES tbl_user(user_id),
-friendship_date DATETIME DEFAULT GETDATE()
+CREATE TABLE friendship (
+    follower_id VARCHAR(300),
+    following_id VARCHAR(300),
+    PRIMARY KEY (follower_id, following_id),
+    FOREIGN KEY (follower_id) REFERENCES tbl_user(user_id),
+    FOREIGN KEY (following_id) REFERENCES tbl_user(user_id),
+	friendship_date DATETIME DEFAULT GETDATE()
 );
+
 ---create a group table 
 CREATE TABLE tbl_group(
 group_id VARCHAR(300) PRIMARY KEY,

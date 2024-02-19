@@ -147,27 +147,43 @@ export const addEventAttendee=async(req,res)=>{
          const event_id=req.params.event_id;
          console.log(event_id)
          const attendee_id=req.body.attendee_id
+
+         const eventDetails={
+            event_id:event_id,
+            attendee_id:attendee_id
+         }
          
 
          const event=await getOneEventService(event_id)
-         logger.info("event info",event)
-         const attendee=await getOneUserService(attendee_id)
 
-         if(event.length==0){
+         console.log(event)
+        
+
+         if(!event[0]){
             logger.info(event)
             sendNotFound(res,"Event does not exist");
             
          }
          else{
-            if(attendee.length==0){
-                const result =await registerEventService({event_id,attendee_id});
-                logger.info(result)
-                sendSuccess(res,"You registered for the event")
+                
+                //user in the event attendee table 
+                const eventAttendeeDetails=await getOneEventFromAttendeeTable(event_id);
+                console.log("event from the attendee table ",eventAttendeeDetails,attendee_id)
+                
+                if(attendee_id==eventAttendeeDetails[0].attendee_id){
+                    sendBadRequest(res, "You already registered for the event")
+                }
+
+                else{
+                    const result =await registerEventService(eventDetails);
+                    logger.info(result)
+                    sendSuccess(res,"You registered for the event")
+
+                }
+                
             }
-            else{
-                sendBadRequest(res, "You already registered for the event")
-            }
-         }       
+            
+              
         
     } catch (error) {
         sendServerError(res,error)
@@ -190,8 +206,6 @@ export const getAllEventAttendees=async(req,res)=>{
              logger.info(result)
              if(result.length==0){
                 sendNotFound(res,"no attendees found")
-              
-                 
              }
              else{
                 return res.status(200).json(result)
@@ -201,6 +215,21 @@ export const getAllEventAttendees=async(req,res)=>{
 
     } catch (error) {
         sendServerError(res,error)
+        
+    }
+}
+
+export const deRegisterAnAttendee=async(req,res)=>{
+    try {
+
+        const attendee_id=req.params.attendee_id;
+        const event_id=req.body.event_id;
+        const result=await getAllEventAttendeesService(event_id)
+        
+        console.log(result)
+        
+        
+    } catch (error) {
         
     }
 }

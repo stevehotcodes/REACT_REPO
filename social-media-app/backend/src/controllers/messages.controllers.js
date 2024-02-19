@@ -10,8 +10,7 @@ export const createMessage=async(req,res)=>{
         const message={
             content:req.body.content,
             sender_id:req.body.sender_id,
-            receiver_id:req.body.receiver_id,
-            
+            receiver_id:req.body.receiver_id
 
         }
 

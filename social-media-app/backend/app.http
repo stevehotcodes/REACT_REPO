@@ -118,13 +118,12 @@ Content-Type: application/json
 
 ###delete the event
 DELETE http://localhost:3000/event/0c3d94d3-00ed-49cc-907c-753bce79b28a
-
 ### register user for an event
-POST http://localhost:3000/event/register/ba353081-eb57-4af6-bfca-938525a6c592
+POST http://localhost:3000/event/attendees/c920d782-a40f-46b9-b9ab-72acf28750d3
 Content-Type:application/json
 
-{
-  "attendee_id":"00811ba5-86be-46ca-b5ca-1c85d8fc1a75"
+{  
+    "attendee_id":"2aa993f6-05d1-441b-91eb-6c475a4d3fe1"
 }
 
 ### get all event attendees
@@ -180,3 +179,11 @@ Content-Type: application/json
 GET http://localhost:3000/comment/2c733200-dab9-4b1e-862f-de9733b0a593
 ### delete comment
 DELETE http://localhost:3000/comment/07cf18db-0a1a-4ea5-b375-7868c2f60e1d
+### follow other user
+POST http://localhost:3000/friendship/00811ba5-86be-46ca-b5ca-1c85d8fc1a75
+Content-Type: application/json
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMDQxNDIsImV4cCI6MTcwODMxMTM0Mn0.NkMFCc8cHN0TaS0XgLuDfhV4p8SmvEhjZ6s89Tp2L-4
+### get all friends
+GET http://localhost:3000/friendship
+Content-Type: application/json
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmFhOTkzZjYtMDVkMS00NDFiLTkxZWItNmM0NzVhNGQzZmUxIiwidXNlcm5hbWUiOiJ0ZXN0c2stdXNlckBleGFtcGxlLmNvbSIsImVtYWlsIjoib25kaWVraXN0ZXBoZW4wMEBnbWFpbC5jb20iLCJpYXQiOjE3MDgzMDUwNjgsImV4cCI6MTcwODMxMjI2OH0.H-Bit_zZL8KYtfqPrJuQE-34GUWaqUySvm-opR8G5lI
