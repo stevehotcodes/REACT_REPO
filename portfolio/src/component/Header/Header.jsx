@@ -1,28 +1,29 @@
 import React from 'react';
-import {NavLink, Link} from 'react-router-dom';
+// import {NavLink, Link} from 'react-router-dom';
 import '../Header/Header.scss';
+import {Link} from 'react-scroll'
 
 const Header = () => {
   const NavArray = [
     {
       info: 'Home',
-      path: '/home'
+      path: 'home'
     },
     {
       info: 'Contacts',
-      path: '/contacts'
+      path: 'contacts'
     },
     {
       info: 'About',
-      path: '/about'
+      path: 'about'
     },
     {
       info: 'Blog',
-      path: '/blog'
+      path: 'blog'
     },
     {
       info: 'Skills',
-      path: '/skills'
+      path: 'skills'
     }
   ];
 
