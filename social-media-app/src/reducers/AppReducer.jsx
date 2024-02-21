@@ -20,7 +20,7 @@ const AppReducer = (state,action) => {
         return {...state,isRightBarOpen:action.payload}
 
       default:
-        return state
+        return statea
     }
    
 
